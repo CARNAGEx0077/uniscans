@@ -3,48 +3,163 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Uniscans & Labs | Accurate • Accessible • Affordable Diagnostics</title>
-    <meta name="description" content="Uniscans & Labs provides premium diagnostic services including MRI, CT Scans, Ultrasound, and full body checkups.">
+    <title>Uniscans & Labs - Diagnostic Center in [CITY] | MRI, CT Scan, Pathology</title>
+    <meta name="description" content="Uniscans & Labs provides NABL certified diagnostic services including MRI, CT Scans, Ultrasound, Pathology & Health Packages. Reports in 24hrs. Book Now!">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
+    <!-- Skip to Main Content (Accessibility) -->
+    <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner" id="promoBanner">
+        🎉 Limited Time Offer: Master Health Checkup @ ₹2,999 (Save ₹1,000) | 
+        <a href="packages.html">Book Now →</a>
+        <button class="promo-close" id="promoClose" aria-label="Close promotion banner">×</button>
+    </div>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-left">
+                <a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone-alt"></i> +91 XXXXX-XXXXX</a>
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Now in [CITY_NAME]</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="reports.html">View Reports</a>
+                <span class="top-bar-divider">|</span>
+                <a href="reports.html">Download Reports</a>
+                <span class="top-bar-divider">|</span>
+                <a href="reports.html">Track Test</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Sticky Navbar -->
-    <header class="navbar">
+    <header class="navbar" id="navbar">
         <div class="container">
             <a href="index.html" class="logo">
                 <i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span>
             </a>
             
-            <nav class="nav-links">
+            <nav class="nav-links" id="navLinks">
                 <a href="index.html" class="active">Home</a>
-                <a href="services.html">Services</a>
+                <div class="nav-dropdown">
+                    <a href="services.html">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html"><i class="fas fa-stethoscope"></i> All Services</a>
+                        <a href="packages.html"><i class="fas fa-box-open"></i> Health Packages</a>
+                        <a href="test-catalog.html"><i class="fas fa-list-alt"></i> Test Catalog</a>
+                        <a href="preparation.html"><i class="fas fa-clipboard-list"></i> Preparation Guides</a>
+                    </div>
+                </div>
                 <a href="about.html">About Us</a>
                 <a href="faq.html">FAQs</a>
                 <a href="contact.html">Contact</a>
                 <a href="appointment.html" class="btn btn-accent">Book Appointment</a>
             </nav>
             
-            <div class="mobile-toggle">
+            <div class="mobile-toggle" id="mobileToggle">
                 <i class="fas fa-bars"></i>
             </div>
         </div>
     </header>
 
+    <!-- Mobile Overlay -->
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Trust Badges Bar -->
+    <div class="trust-bar">
+        <div class="trust-bar-inner">
+            <div class="trust-bar-item"><i class="fas fa-certificate"></i> NABL Certified</div>
+            <div class="trust-bar-item"><i class="fas fa-shield-alt"></i> ISO 9001:2015</div>
+            <div class="trust-bar-item"><i class="fas fa-users"></i> 10,000+ Happy Patients</div>
+            <div class="trust-bar-item"><i class="fas fa-clock"></i> 24hr Reports</div>
+            <div class="trust-bar-item"><i class="fas fa-home"></i> Free Home Collection</div>
+            <!-- Duplicated for mobile scroll effect -->
+            <div class="trust-bar-item"><i class="fas fa-certificate"></i> NABL Certified</div>
+            <div class="trust-bar-item"><i class="fas fa-shield-alt"></i> ISO 9001:2015</div>
+            <div class="trust-bar-item"><i class="fas fa-users"></i> 10,000+ Happy Patients</div>
+            <div class="trust-bar-item"><i class="fas fa-clock"></i> 24hr Reports</div>
+            <div class="trust-bar-item"><i class="fas fa-home"></i> Free Home Collection</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
+                <div class="hero-offer">
+                    💰 Master Health Checkup @ ₹[PRICE] — Save ₹[DISCOUNT]
+                </div>
                 <h1>Accurate • Accessible • Affordable Diagnostics</h1>
                 <p>Welcome to Uniscans & Labs, where advanced medical technology meets compassionate healthcare. Reliable lab reports, world-class imaging, and certified doctors ensuring your health is in the right hands.</p>
-                <div style="display: flex; gap: 1rem;">
-                    <a href="appointment.html" class="btn btn-primary">Book a Test Now</a>
+                
+                <div class="hero-trust-badges">
+                    <span class="hero-trust-badge"><i class="fas fa-certificate"></i> NABL Certified</span>
+                    <span class="hero-trust-badge"><i class="fas fa-shield-alt"></i> ISO 9001:2015</span>
+                    <span class="hero-trust-badge"><i class="fas fa-vial"></i> 10,000+ Tests Done</span>
+                    <span class="hero-trust-badge"><i class="fas fa-clock"></i> 24hr Reports</span>
+                </div>
+
+                <div class="hero-emergency">
+                    <i class="fas fa-ambulance"></i> 24/7 Emergency Services Available
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="appointment.html" class="btn btn-primary btn-lg">📞 Book Now - Get Report in 24hrs</a>
                     <a href="services.html" class="btn btn-outline">Explore Services</a>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20test.%20Please%20assist." target="_blank" rel="noopener" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
                 </div>
             </div>
             <div class="hero-image">
-                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" alt="Modern Medical Laboratory">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=800&auto=format&fit=crop" alt="Modern Medical Laboratory" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item fade-in">
+                    <div class="stat-icon"><i class="fas fa-vial"></i></div>
+                    <div class="stat-number" data-count="50000">0</div>
+                    <div class="stat-label">Tests Conducted</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon"><i class="fas fa-bullseye"></i></div>
+                    <div class="stat-number" data-count="99.9" data-suffix="%">0</div>
+                    <div class="stat-label">Accuracy Rate</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon"><i class="fas fa-clock"></i></div>
+                    <div class="stat-number" data-count="24" data-suffix=" hrs">0</div>
+                    <div class="stat-label">Report Delivery</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <div class="stat-number" data-count="15" data-suffix="+">0</div>
+                    <div class="stat-label">Locations</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon"><i class="fas fa-certificate"></i></div>
+                    <div class="stat-number">NABL</div>
+                    <div class="stat-label">Certified Lab</div>
+                </div>
+                <div class="stat-item fade-in">
+                    <div class="stat-icon"><i class="fas fa-calendar-check"></i></div>
+                    <div class="stat-number" data-count="10" data-suffix="+">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
             </div>
         </div>
     </section>
@@ -58,22 +173,22 @@
             </div>
             
             <div class="grid">
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fas fa-microscope card-icon"></i>
                     <h3>Advanced Technology</h3>
                     <p>We use state-of-the-art MRI, CT, and pathology equipment ensures the highest accuracy in test results.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fas fa-user-md card-icon"></i>
                     <h3>Expert Pathologists</h3>
                     <p>Our team consists of highly experienced and certified doctors dedicated to your accurate diagnosis.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fas fa-file-medical-alt card-icon"></i>
                     <h3>Fast Reports</h3>
                     <p>Get your digital reports quickly and securely online without having to visit the center again.</p>
                 </div>
-                <div class="card">
+                <div class="card fade-in">
                     <i class="fas fa-home card-icon"></i>
                     <h3>Home Sample Collection</h3>
                     <p>Book a test from the comfort of your home. Our trained phlebotomists will visit you.</p>
@@ -82,40 +197,303 @@
         </div>
     </section>
 
-    <!-- Technology & Equipment -->
+    <!-- Expanded Services Section -->
     <section class="section section-alt" id="services">
         <div class="container">
             <div class="text-center mb-2">
-                <h2>Our Diagnostics Services</h2>
-                <p>Comprehensive healthcare uncompromised on quality.</p>
+                <h2>Our Diagnostic Services</h2>
+                <p>Comprehensive healthcare solutions with state-of-the-art technology.</p>
             </div>
             
-            <div class="grid">
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&auto=format&fit=crop" alt="MRI Scan" class="staff-img">
-                    <div class="staff-info">
-                        <h3>MRI & CT Scans</h3>
-                        <p>High-resolution imaging for accurate neurological and physical assessments.</p>
+            <!-- Category Tabs -->
+            <div class="service-category-tabs">
+                <button class="service-tab active" data-category="all">All Services</button>
+                <button class="service-tab" data-category="radiology">Radiology</button>
+                <button class="service-tab" data-category="pathology">Pathology</button>
+                <button class="service-tab" data-category="cardiology">Cardiology</button>
+                <button class="service-tab" data-category="packages">Health Packages</button>
+            </div>
+
+            <!-- Radiology -->
+            <div class="service-category-section" data-category="radiology">
+                <div class="service-category-header">
+                    <i class="fas fa-x-ray"></i>
+                    <h3 style="margin-bottom:0;">Radiology Services</h3>
+                </div>
+                <div class="service-grid-4">
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-brain"></i></div>
+                        <h4>MRI Scans</h4>
+                        <p class="service-mini-desc">Brain, Spine, Joints, Full Body imaging</p>
+                        <span class="service-price-badge">From ₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#mri" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-lungs"></i></div>
+                        <h4>CT Scans</h4>
+                        <p class="service-mini-desc">Head, Chest, Abdomen, Angiography</p>
+                        <span class="service-price-badge">From ₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#ct" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-x-ray"></i></div>
+                        <h4>X-Ray</h4>
+                        <p class="service-mini-desc">Digital X-Ray, Chest, Bone imaging</p>
+                        <span class="service-price-badge">From ₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#xray" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-baby"></i></div>
+                        <h4>Ultrasound</h4>
+                        <p class="service-mini-desc">Abdomen, Pregnancy, Doppler scans</p>
+                        <span class="service-price-badge">From ₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#ultrasound" class="view-details">View Details →</a>
+                        </div>
                     </div>
                 </div>
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1579154204601-01588f351e67?q=80&w=600&auto=format&fit=crop" alt="Pathology Lab Tests" class="staff-img">
-                    <div class="staff-info">
-                        <h3>Comprehensive Blood Tests</h3>
-                        <p>Complete hematology and biochemistry testing with precise results.</p>
+            </div>
+
+            <!-- Pathology -->
+            <div class="service-category-section" data-category="pathology" style="margin-top: 2.5rem;">
+                <div class="service-category-header">
+                    <i class="fas fa-vials"></i>
+                    <h3 style="margin-bottom:0;">Pathology Services</h3>
+                </div>
+                <div class="service-grid-4">
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-tint"></i></div>
+                        <h4>Complete Blood Count</h4>
+                        <p class="service-mini-desc">Comprehensive blood analysis with 24+ parameters</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#cbc" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-heart"></i></div>
+                        <h4>Lipid Profile</h4>
+                        <p class="service-mini-desc">Cholesterol, Triglycerides, HDL, LDL</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#lipid" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-disease"></i></div>
+                        <h4>Thyroid Function</h4>
+                        <p class="service-mini-desc">T3, T4, TSH complete thyroid panel</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#thyroid" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-candy-cane"></i></div>
+                        <h4>Diabetes Screening</h4>
+                        <p class="service-mini-desc">FBS, PPBS, HbA1c complete panel</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#diabetes" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-liver"></i></div>
+                        <h4>Liver Function Test</h4>
+                        <p class="service-mini-desc">SGOT, SGPT, Bilirubin, ALP & more</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#lft" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-kidneys"></i></div>
+                        <h4>Kidney Function Test</h4>
+                        <p class="service-mini-desc">Creatinine, BUN, Uric Acid, Electrolytes</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#kft" class="view-details">View Details →</a>
+                        </div>
                     </div>
                 </div>
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=600&auto=format&fit=crop" alt="Ultrasound" class="staff-img">
-                    <div class="staff-info">
-                        <h3>Ultrasound & X-Ray</h3>
-                        <p>Advanced sonography and digital X-rays for immediate clarity.</p>
+            </div>
+
+            <!-- Cardiology -->
+            <div class="service-category-section" data-category="cardiology" style="margin-top: 2.5rem;">
+                <div class="service-category-header">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3 style="margin-bottom:0;">Cardiology Services</h3>
+                </div>
+                <div class="service-grid-4">
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-wave-square"></i></div>
+                        <h4>ECG</h4>
+                        <p class="service-mini-desc">Electrocardiogram for heart rhythm analysis</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#ecg" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-heart"></i></div>
+                        <h4>2D Echo</h4>
+                        <p class="service-mini-desc">Echocardiography for heart structure</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#echo" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-running"></i></div>
+                        <h4>TMT (Treadmill Test)</h4>
+                        <p class="service-mini-desc">Stress test for cardiac fitness</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#tmt" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-stopwatch"></i></div>
+                        <h4>Holter Monitoring</h4>
+                        <p class="service-mini-desc">24-hour continuous heart monitoring</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="services.html#holter" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Health Packages -->
+            <div class="service-category-section" data-category="packages" style="margin-top: 2.5rem;">
+                <div class="service-category-header">
+                    <i class="fas fa-box-open"></i>
+                    <h3 style="margin-bottom:0;">Health Packages</h3>
+                </div>
+                <div class="service-grid-4">
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-check-double"></i></div>
+                        <h4>Master Health Checkup</h4>
+                        <p class="service-mini-desc">60+ tests comprehensive screening</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="packages.html" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-briefcase-medical"></i></div>
+                        <h4>Executive Package</h4>
+                        <p class="service-mini-desc">100+ tests for comprehensive coverage</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="packages.html" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-candy-cane"></i></div>
+                        <h4>Diabetes Care Package</h4>
+                        <p class="service-mini-desc">25+ tests for complete diabetes monitoring</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="packages.html" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-female"></i></div>
+                        <h4>Women's Wellness</h4>
+                        <p class="service-mini-desc">45+ tests comprehensive women's health</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="packages.html" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-user-clock"></i></div>
+                        <h4>Senior Citizen Package</h4>
+                        <p class="service-mini-desc">70+ tests designed for 60+ age group</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="packages.html" class="view-details">View Details →</a>
+                        </div>
+                    </div>
+                    <div class="service-card-mini fade-in">
+                        <div class="service-mini-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h4>Cardiac Health Package</h4>
+                        <p class="service-mini-desc">35+ tests for heart disease risk assessment</p>
+                        <span class="service-price-badge">₹[PRICE]</span>
+                        <div class="service-mini-actions">
+                            <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            <a href="packages.html" class="view-details">View Details →</a>
+                        </div>
                     </div>
                 </div>
             </div>
             
             <div class="text-center mt-2">
                 <a href="services.html" class="btn btn-primary">View All Services</a>
+                <a href="packages.html" class="btn btn-outline" style="margin-left: 0.5rem;">View Packages</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>How It Works</h2>
+                <p>Getting tested at Uniscans is simple, quick, and hassle-free.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card fade-in">
+                    <div class="step-number">1</div>
+                    <i class="step-icon fas fa-calendar-check"></i>
+                    <h4>Book Your Test</h4>
+                    <p>Call us, WhatsApp, or book online. Choose home collection or visit center. Upload prescription if required.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-number">2</div>
+                    <i class="step-icon fas fa-syringe"></i>
+                    <h4>Sample Collection</h4>
+                    <p>Visit our center OR we come to you. Trained technicians handle collection in a comfortable, hygienic environment.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-number">3</div>
+                    <i class="step-icon fas fa-flask"></i>
+                    <h4>Advanced Testing</h4>
+                    <p>NABL certified laboratory with latest equipment & technology. Quality controlled processes ensure accuracy.</p>
+                </div>
+                <div class="step-card fade-in">
+                    <div class="step-number">4</div>
+                    <i class="step-icon fas fa-file-medical-alt"></i>
+                    <h4>Get Your Report</h4>
+                    <p>Digital reports in 24 hours. Email & SMS notification. Download anytime from portal. Doctor consultation available.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -143,44 +521,79 @@
                 <p>The minds ensuring your health metrics remain perfectly clear.</p>
             </div>
             
-            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=400&auto=format&fit=crop" alt="Dr. John Doe" class="staff-img">
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="staff-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=400&auto=format&fit=crop" alt="Dr. [DOCTOR_NAME_1]" class="staff-img" loading="lazy">
                     <div class="staff-info">
-                        <h3>Dr. Arthur Jenkins</h3>
-                        <p style="color: var(--accent-color); font-weight: 500;">Chief Radiologist</p>
-                        <p>MD, 15+ Years Experience</p>
+                        <h3>Dr. [DOCTOR_NAME_1]</h3>
+                        <p style="color: var(--teal); font-weight: 600; margin-bottom: 0.5rem;">Chief Radiologist</p>
+                        <div class="staff-badges">
+                            <span class="staff-badge">MD Radiodiagnosis</span>
+                            <span class="staff-badge experience">15+ Yrs Exp</span>
+                        </div>
+                        <div class="staff-meta">
+                            <span><i class="fas fa-id-card"></i> Reg: [REG_NO]</span>
+                            <span><i class="fas fa-language"></i> English, Hindi, Tamil</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-accent btn-sm">Consult Now</a>
                     </div>
                 </div>
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=400&auto=format&fit=crop" alt="Dr. Sarah Lee" class="staff-img">
+                <div class="staff-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=400&auto=format&fit=crop" alt="Dr. [DOCTOR_NAME_2]" class="staff-img" loading="lazy">
                     <div class="staff-info">
-                        <h3>Dr. Sarah Lee</h3>
-                        <p style="color: var(--accent-color); font-weight: 500;">Lead Pathologist</p>
-                        <p>MBBS, MD Pathology</p>
+                        <h3>Dr. [DOCTOR_NAME_2]</h3>
+                        <p style="color: var(--teal); font-weight: 600; margin-bottom: 0.5rem;">Lead Pathologist</p>
+                        <div class="staff-badges">
+                            <span class="staff-badge">MBBS, MD Pathology</span>
+                            <span class="staff-badge experience">12+ Yrs Exp</span>
+                        </div>
+                        <div class="staff-meta">
+                            <span><i class="fas fa-id-card"></i> Reg: [REG_NO]</span>
+                            <span><i class="fas fa-language"></i> English, Hindi</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-accent btn-sm">Consult Now</a>
                     </div>
                 </div>
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=400&auto=format&fit=crop" alt="Dr. Michael Chang" class="staff-img">
+                <div class="staff-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=400&auto=format&fit=crop" alt="Dr. [DOCTOR_NAME_3]" class="staff-img" loading="lazy">
                     <div class="staff-info">
-                        <h3>Dr. Michael Chang</h3>
-                        <p style="color: var(--accent-color); font-weight: 500;">Senior Sonologist</p>
-                        <p>DNB Radiodiagnosis</p>
+                        <h3>Dr. [DOCTOR_NAME_3]</h3>
+                        <p style="color: var(--teal); font-weight: 600; margin-bottom: 0.5rem;">Senior Sonologist</p>
+                        <div class="staff-badges">
+                            <span class="staff-badge">DNB Radiodiagnosis</span>
+                            <span class="staff-badge experience">10+ Yrs Exp</span>
+                        </div>
+                        <div class="staff-meta">
+                            <span><i class="fas fa-id-card"></i> Reg: [REG_NO]</span>
+                            <span><i class="fas fa-language"></i> English, Tamil</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-accent btn-sm">Consult Now</a>
                     </div>
                 </div>
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?q=80&w=400&auto=format&fit=crop" alt="Dr. Emma Watson" class="staff-img">
+                <div class="staff-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?q=80&w=400&auto=format&fit=crop" alt="Dr. [DOCTOR_NAME_4]" class="staff-img" loading="lazy">
                     <div class="staff-info">
-                        <h3>Dr. Olivia Stone</h3>
-                        <p style="color: var(--accent-color); font-weight: 500;">Cardiologist</p>
-                        <p>MD, FACC</p>
+                        <h3>Dr. [DOCTOR_NAME_4]</h3>
+                        <p style="color: var(--teal); font-weight: 600; margin-bottom: 0.5rem;">Cardiologist</p>
+                        <div class="staff-badges">
+                            <span class="staff-badge">MD, FACC</span>
+                            <span class="staff-badge experience">18+ Yrs Exp</span>
+                        </div>
+                        <div class="staff-meta">
+                            <span><i class="fas fa-id-card"></i> Reg: [REG_NO]</span>
+                            <span><i class="fas fa-language"></i> English, Hindi, Tamil</span>
+                        </div>
+                        <a href="appointment.html" class="btn btn-accent btn-sm">Consult Now</a>
                     </div>
                 </div>
             </div>
+            <p class="text-center mt-2" style="font-size: 0.85rem; color: var(--text-muted);">
+                <i class="fas fa-info-circle"></i> All our doctors are registered with [State Medical Council] and have 10+ years of experience.
+            </p>
         </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- Enhanced Testimonials -->
     <section class="section" id="testimonials">
         <div class="container">
             <div class="text-center mb-2">
@@ -192,90 +605,329 @@
                 <div class="testimonial-track">
                     <div class="testimonial-slide">
                         <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="testimonial-text">"The MRI process was so seamless, and the staff was extremely friendly. I got my reports the very next day over email. Highly recommend Uniscans & Labs!"</p>
-                            <h4 class="testimonial-author">- Samantha Peterson</h4>
+                            <div class="testimonial-footer">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=100&auto=format&fit=crop" alt="Avatar" class="testimonial-avatar" loading="lazy">
+                                <h4 class="testimonial-author">- Rahul Sharma, [CITY]</h4>
+                                <span class="testimonial-meta">Reviewed on March 2026</span>
+                                <span class="testimonial-test">MRI Brain Scan</span>
+                                <span class="testimonial-verified"><i class="fas fa-check-circle"></i> Verified Patient</span>
+                            </div>
                         </div>
                     </div>
                     <div class="testimonial-slide">
                         <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="testimonial-text">"Very professional setup. The lab is exceptionally clean, and the home collection service they offer is a lifesaver for my elderly parents."</p>
-                            <h4 class="testimonial-author">- Rahul Verma</h4>
+                            <div class="testimonial-footer">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=100&auto=format&fit=crop" alt="Avatar" class="testimonial-avatar" loading="lazy">
+                                <h4 class="testimonial-author">- Priya Menon, [CITY]</h4>
+                                <span class="testimonial-meta">Reviewed on February 2026</span>
+                                <span class="testimonial-test">Master Health Checkup</span>
+                                <span class="testimonial-verified"><i class="fas fa-check-circle"></i> Verified Patient</span>
+                            </div>
                         </div>
                     </div>
                     <div class="testimonial-slide">
                         <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
                             <i class="fas fa-quote-left quote-icon"></i>
                             <p class="testimonial-text">"Pricing is very transparent compared to other corporate hospitals, and the doctors took time to actually explain the ultrasound results. Great facility."</p>
-                            <h4 class="testimonial-author">- James O'Connor</h4>
+                            <div class="testimonial-footer">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=100&auto=format&fit=crop" alt="Avatar" class="testimonial-avatar" loading="lazy">
+                                <h4 class="testimonial-author">- Arjun Krishnan, [CITY]</h4>
+                                <span class="testimonial-meta">Reviewed on January 2026</span>
+                                <span class="testimonial-test">Ultrasound Abdomen</span>
+                                <span class="testimonial-verified"><i class="fas fa-check-circle"></i> Verified Patient</span>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <div class="slider-controls">
-                    <button class="slider-btn slider-prev"><i class="fas fa-chevron-left"></i></button>
-                    <button class="slider-btn slider-next"><i class="fas fa-chevron-right"></i></button>
+                    <button class="slider-btn slider-prev" aria-label="Previous testimonial"><i class="fas fa-chevron-left"></i></button>
+                    <button class="slider-btn slider-next" aria-label="Next testimonial"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+
+            <!-- Google Rating -->
+            <div class="google-rating fade-in">
+                <div>
+                    <span class="rating-number">4.8</span>
+                </div>
+                <div>
+                    <div class="rating-stars">★★★★★</div>
+                    <div class="rating-count">(500+ Reviews on Google)</div>
+                </div>
+                <a href="#" target="_blank" rel="noopener">Read more on Google →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditations & Certifications -->
+    <section class="section section-alt" id="accreditations">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Quality You Can Trust</h2>
+                <p>Our accreditations reflect our commitment to delivering world-class diagnostics.</p>
+            </div>
+            <div class="accreditations-grid">
+                <div class="accreditation-card fade-in">
+                    <div class="acc-icon"><i class="fas fa-certificate"></i></div>
+                    <h4>NABL Accredited</h4>
+                    <p>Certificate No: [NABL_CERT_NO]</p>
+                    <a href="#">View Certificate →</a>
+                </div>
+                <div class="accreditation-card fade-in">
+                    <div class="acc-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h4>ISO 9001:2015</h4>
+                    <p>International quality management certification</p>
+                    <a href="#">View Certificate →</a>
+                </div>
+                <div class="accreditation-card fade-in">
+                    <div class="acc-icon"><i class="fas fa-hospital"></i></div>
+                    <h4>State Medical Board</h4>
+                    <p>Registered with [STATE] Medical Council</p>
+                    <a href="#">View Certificate →</a>
+                </div>
+                <div class="accreditation-card fade-in">
+                    <div class="acc-icon"><i class="fas fa-award"></i></div>
+                    <h4>Quality Excellence Award</h4>
+                    <p>Recognized for outstanding diagnostic services</p>
+                    <a href="#">View Certificate →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Why Patients Trust Us -->
+    <section class="section" id="trust-us">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Why Patients Trust Us</h2>
+                <p>Your health is our priority. Here's what sets us apart.</p>
+            </div>
+            <div class="trust-factors-grid">
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>NABL Accredited Laboratory</span></div>
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>Latest Technology Equipment</span></div>
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>Experienced Doctors & Staff</span></div>
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>Home Sample Collection</span></div>
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>24-Hour Report Delivery</span></div>
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>Transparent Pricing</span></div>
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>Digital Report Access 24/7</span></div>
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>Insurance Accepted</span></div>
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>Free Doctor Consultation</span></div>
+                <div class="trust-factor fade-in"><i class="fas fa-check-circle"></i><span>Hygiene & Safety Protocols</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog / Health Tips -->
+    <section class="section section-alt" id="blog">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Latest Health Tips & Articles</h2>
+                <p>Stay informed about your health with expert insights.</p>
+            </div>
+            <div class="blog-grid">
+                <div class="blog-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=600&auto=format&fit=crop" alt="Health Tips" class="blog-card-img" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Preventive Care</span>
+                        <h4>Why Annual Health Checkups Are Essential After 30</h4>
+                        <p>Regular health screening can detect early signs of diabetes, heart disease, thyroid disorders and more. Learn why it matters...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?q=80&w=600&auto=format&fit=crop" alt="MRI Guide" class="blog-card-img" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Radiology</span>
+                        <h4>MRI Scan: What to Expect & How to Prepare</h4>
+                        <p>Nervous about your first MRI? Our comprehensive guide covers everything from preparation to what happens during the scan...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1559757175-5700dde675bc?q=80&w=600&auto=format&fit=crop" alt="Diabetes Guide" class="blog-card-img" loading="lazy">
+                    <div class="blog-card-content">
+                        <span class="blog-card-tag">Diabetes</span>
+                        <h4>Understanding Your HbA1c Results — A Complete Guide</h4>
+                        <p>HbA1c is a critical marker for diabetes management. Learn what your numbers mean and when to speak with your doctor...</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-2">
+                <a href="#" class="btn btn-outline">View All Articles</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Referral Program -->
+    <section class="section">
+        <div class="container">
+            <div class="referral-section fade-in">
+                <h3>🎁 REFER A FRIEND, GET ₹500 OFF</h3>
+                <p>Share the gift of health! When your friend books a test, you both get ₹500 discount.</p>
+                <div class="referral-steps">
+                    <div class="referral-step">
+                        <span class="step-num">1</span>
+                        <span>Share your unique code</span>
+                    </div>
+                    <div class="referral-step">
+                        <span class="step-num">2</span>
+                        <span>Friend books test using code</span>
+                    </div>
+                    <div class="referral-step">
+                        <span class="step-num">3</span>
+                        <span>Both get ₹500 discount</span>
+                    </div>
+                </div>
+                <a href="#" class="btn btn-primary">Get Your Referral Code</a>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- Enhanced Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
+                <!-- About -->
                 <div>
                     <h3 style="display: flex; align-items: center; gap: 0.5rem;">
                         <i class="fas fa-heartbeat"></i> Uniscans & Labs
                     </h3>
-                    <p>Providing accurate, accessible, and affordable diagnostic solutions. Trusted by thousands of patients and doctors across the city.</p>
+                    <p class="footer-about-text">Providing accurate, accessible, and affordable diagnostic solutions. Trusted by thousands of patients and doctors across the city since [YEAR].</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 
+                <!-- Quick Links -->
                 <div>
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="appointment.html">Book Appointment</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="faq.html"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact Us</a></li>
+                        <li><a href="appointment.html"><i class="fas fa-chevron-right"></i> Book Appointment</a></li>
                     </ul>
                 </div>
-                
+
+                <!-- Our Services -->
                 <div>
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">MRI & CT Scan</a></li>
-                        <li><a href="services.html">Ultrasound</a></li>
-                        <li><a href="services.html">Pathology</a></li>
-                        <li><a href="services.html">X-Ray</a></li>
-                        <li><a href="services.html">Health Packages</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> MRI & CT Scan</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Ultrasound</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pathology</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> X-Ray</a></li>
+                        <li><a href="packages.html"><i class="fas fa-chevron-right"></i> Health Packages</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
                     </ul>
                 </div>
                 
+                <!-- Contact Info -->
                 <div>
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt" style="width: 20px;"></i> 123 Health Avenue, Medical District, Cityville 40001</li>
-                        <li><i class="fas fa-phone" style="width: 20px;"></i> +1 (800) 123-4567</li>
-                        <li><i class="fas fa-envelope" style="width: 20px;"></i> info@uniscanslabs.com</li>
-                        <li><i class="fas fa-clock" style="width: 20px;"></i> Mon-Sun: 7:00 AM - 9:00 PM</li>
+                        <li><i class="fas fa-map-marker-alt" style="width: 18px; color: var(--teal);"></i> [FULL_ADDRESS], [CITY] - [PINCODE]</li>
+                        <li><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone" style="width: 18px; color: var(--teal);"></i> +91 XXXXX-XXXXX</a></li>
+                        <li><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone" style="width: 18px; color: var(--teal);"></i> +91 XXXXX-XXXXX</a></li>
+                        <li><a href="mailto:info@[DOMAIN]"><i class="fas fa-envelope" style="width: 18px; color: var(--teal);"></i> info@[DOMAIN]</a></li>
+                        <li><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp" style="width: 18px; color: var(--whatsapp-green);"></i> WhatsApp Us</a></li>
+                        <li><i class="fas fa-clock" style="width: 18px; color: var(--teal);"></i> Mon-Sun: 7:00 AM - 9:00 PM</li>
+                    </ul>
+                </div>
+
+                <!-- Important Links -->
+                <div>
+                    <h3>Important Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
+                        <li><a href="refund.html"><i class="fas fa-chevron-right"></i> Refund Policy</a></li>
+                        <li><a href="refund.html"><i class="fas fa-chevron-right"></i> Cancellation Policy</a></li>
+                    </ul>
+                </div>
+
+                <!-- For Patients -->
+                <div>
+                    <h3>For Patients</h3>
+                    <ul class="footer-links">
+                        <li><a href="reports.html"><i class="fas fa-chevron-right"></i> Download Reports</a></li>
+                        <li><a href="reports.html"><i class="fas fa-chevron-right"></i> Track Test Status</a></li>
+                        <li><a href="appointment.html"><i class="fas fa-chevron-right"></i> Upload Prescription</a></li>
+                        <li><a href="appointment.html"><i class="fas fa-chevron-right"></i> Book Home Collection</a></li>
+                        <li><a href="test-catalog.html"><i class="fas fa-chevron-right"></i> View Test Catalog</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2026 Uniscans & Labs. All Rights Reserved. Designed for Health.</p>
+                <div class="footer-bottom-inner">
+                    <p>&copy; 2026 Uniscans & Labs. All Rights Reserved.</p>
+                    <div class="payment-methods">
+                        <i class="fab fa-cc-visa"></i>
+                        <i class="fab fa-cc-mastercard"></i>
+                        <i class="fab fa-google-pay"></i>
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <div class="ssl-badge">
+                        <i class="fas fa-lock"></i> SSL Secured
+                    </div>
+                </div>
             </div>
         </div>
     </footer>
 
     <!-- Floating WhatsApp -->
-    <a href="#" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20test.%20Please%20assist." class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener">
         <i class="fab fa-whatsapp"></i>
+        <span class="tooltip">Chat with us</span>
     </a>
+
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cookie Consent -->
+    <div class="cookie-banner" id="cookieBanner">
+        <p>We use cookies to improve your experience on our website. By continuing to browse, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+        <div class="cookie-buttons">
+            <button class="btn cookie-btn-decline" id="cookieDecline">Decline</button>
+            <button class="btn btn-accent" id="cookieAccept">Accept</button>
+        </div>
+    </div>
+
+    <!-- Social Proof Popup -->
+    <div class="social-proof-popup" id="socialProof">
+        <div class="sp-icon"><i class="fas fa-user-check"></i></div>
+        <div>
+            <p class="sp-text" id="spText"><strong>Ramesh from [CITY]</strong> just booked Master Health Checkup</p>
+            <span class="sp-time" id="spTime">2 minutes ago</span>
+        </div>
+        <button class="sp-close" id="spClose" aria-label="Close notification">×</button>
+    </div>
+
+    <!-- Mobile Bottom CTA -->
+    <div class="mobile-bottom-cta">
+        <a href="tel:+91XXXXXXXXXX" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
+        <a href="appointment.html" class="btn btn-accent"><i class="fas fa-calendar-check"></i> Book Test</a>
+    </div>
 
     <script src="script.js"></script>
 </body>

@@ -3,132 +3,430 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services | Uniscans & Labs</title>
-    <meta name="description" content="Explore the comprehensive medical diagnostic services offered by Uniscans & Labs.">
+    <title>Diagnostic Services - MRI, CT, Pathology | Uniscans & Labs [CITY]</title>
+    <meta name="description" content="150+ diagnostic tests available. MRI, CT Scan, Pathology, Ultrasound, X-Ray & Health Packages starting from ₹99. Reports in 24hrs.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Sticky Navbar -->
-    <header class="navbar">
+    <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner" id="promoBanner">
+        🎉 Limited Time Offer: Master Health Checkup @ ₹2,999 (Save ₹1,000) | 
+        <a href="packages.html">Book Now →</a>
+        <button class="promo-close" id="promoClose" aria-label="Close">×</button>
+    </div>
+
+    <!-- Top Contact Bar -->
+    <div class="top-bar">
         <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span>
-            </a>
-            
-            <nav class="nav-links">
+            <div class="top-bar-left">
+                <a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone-alt"></i> +91 XXXXX-XXXXX</a>
+                <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <span class="location-badge"><i class="fas fa-map-marker-alt"></i> Now in [CITY_NAME]</span>
+            </div>
+            <div class="top-bar-right">
+                <a href="reports.html">View Reports</a>
+                <span class="top-bar-divider">|</span>
+                <a href="reports.html">Track Test</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container">
+            <a href="index.html" class="logo"><i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span></a>
+            <nav class="nav-links" id="navLinks">
                 <a href="index.html">Home</a>
-                <a href="services.html" class="active">Services</a>
+                <div class="nav-dropdown">
+                    <a href="services.html" class="active">Services <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="services.html"><i class="fas fa-stethoscope"></i> All Services</a>
+                        <a href="packages.html"><i class="fas fa-box-open"></i> Health Packages</a>
+                        <a href="test-catalog.html"><i class="fas fa-list-alt"></i> Test Catalog</a>
+                        <a href="preparation.html"><i class="fas fa-clipboard-list"></i> Preparation Guides</a>
+                    </div>
+                </div>
                 <a href="about.html">About Us</a>
                 <a href="faq.html">FAQs</a>
                 <a href="contact.html">Contact</a>
                 <a href="appointment.html" class="btn btn-accent">Book Appointment</a>
             </nav>
-            
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
+            <div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div>
         </div>
     </header>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
 
-    <!-- Intro Section -->
-    <section class="section section-alt" style="padding-top: 10rem; padding-bottom: 4rem;">
+    <!-- Trust Bar -->
+    <div class="trust-bar">
+        <div class="trust-bar-inner">
+            <div class="trust-bar-item"><i class="fas fa-certificate"></i> NABL Certified</div>
+            <div class="trust-bar-item"><i class="fas fa-shield-alt"></i> ISO 9001:2015</div>
+            <div class="trust-bar-item"><i class="fas fa-users"></i> 10,000+ Happy Patients</div>
+            <div class="trust-bar-item"><i class="fas fa-clock"></i> 24hr Reports</div>
+            <div class="trust-bar-item"><i class="fas fa-home"></i> Free Home Collection</div>
+        </div>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" style="padding-top: 1rem; background: var(--section-alt);">
+        <div class="container">
+            <ul class="breadcrumb-list">
+                <li><a href="index.html">Home</a></li>
+                <li><span class="separator"><i class="fas fa-chevron-right"></i></span></li>
+                <li class="active">Services</li>
+            </ul>
+        </div>
+    </div>
+
+    <main id="main-content">
+
+    <!-- Page Header -->
+    <section class="section section-alt" style="padding-top: 2rem; padding-bottom: 3rem;">
         <div class="container text-center">
             <h1>Our Diagnostic Services</h1>
-            <p>Comprehensive health checkups and advanced diagnostics under one roof.</p>
+            <p style="font-size: 1.1rem;">Comprehensive healthcare solutions with state-of-the-art technology</p>
+            <div class="hero-trust-badges" style="justify-content: center; margin-top: 1.5rem;">
+                <span class="hero-trust-badge"><i class="fas fa-list-alt"></i> 150+ Tests Available</span>
+                <span class="hero-trust-badge"><i class="fas fa-rupee-sign"></i> Starting from ₹99</span>
+                <span class="hero-trust-badge"><i class="fas fa-clock"></i> Reports in 24hrs</span>
+            </div>
         </div>
     </section>
 
-    <!-- Pricing Plans Section -->
-    <section class="section" id="packages">
+    <!-- Featured Packages Banner -->
+    <section class="section" style="padding-bottom: 2rem;">
         <div class="container">
             <div class="text-center mb-2">
-                <h2>Full Body Checkup Packages</h2>
-                <p>Uniscans makes your health checkups easy and affordable with FullBody Checkups Starting at ₹999 only!</p>
+                <h2>Featured Health Packages</h2>
+                <p>Save up to 40% with our comprehensive screening packages</p>
             </div>
-            
-            <div class="pricing-grid">
-                <!-- Silver -->
-                <div class="pricing-card">
-                    <div class="plan-name">Silver</div>
-                    <div class="plan-params">Full Body Checkup<br>69 Parameters</div>
-                    <ul class="plan-highlights">
-                        <li><i class="fas fa-check"></i> Basic health screening</li>
-                        <li><i class="fas fa-check"></i> Covers essential blood tests</li>
-                    </ul>
-                    <div class="price-container">
-                        <span class="price-original">₹2710</span>
-                        <span class="price-discounted">₹999/-</span>
-                    </div>
-                    <a href="appointment.html?plan=silver" class="btn btn-accent">Book Silver Package</a>
-                    <p class="microcopy">* Reports delivered within 24 hours</p>
-                </div>
-                
-                <!-- Gold -->
-                <div class="pricing-card popular">
+            <div class="pricing-grid" style="margin-top: 0;">
+                <!-- Master -->
+                <div class="pricing-card popular fade-in">
                     <div class="popular-badge">Most Popular</div>
-                    <div class="plan-name" style="color: #FFB300;">Gold</div>
-                    <div class="plan-params">Full Body Checkup<br>71 Parameters</div>
+                    <div class="plan-name">Master Health Checkup</div>
+                    <div class="plan-params">60+ Tests Included</div>
                     <ul class="plan-highlights">
-                        <li><i class="fas fa-check"></i> Covers essential blood tests</li>
-                        <li><i class="fas fa-check"></i> Includes HbA1c</li>
-                        <li><i class="fas fa-check"></i> Recommended for annual check</li>
+                        <li><i class="fas fa-check"></i> Full body wellness screening</li>
+                        <li><i class="fas fa-check"></i> Free doctor consultation</li>
+                        <li><i class="fas fa-check"></i> Free home collection</li>
                     </ul>
                     <div class="price-container">
-                        <span class="price-original">₹3160</span>
-                        <span class="price-discounted">₹1299/-</span>
+                        <span class="price-original">₹4,999</span>
+                        <span class="price-discounted">₹2,999/-</span>
                     </div>
-                    <a href="appointment.html?plan=gold" class="btn btn-accent">Book Gold Package</a>
-                    <p class="microcopy">* Reports delivered within 24 hours</p>
+                    <a href="appointment.html?plan=master" class="btn btn-accent">Book Now</a>
+                    <p class="microcopy">* Popular with Corporate employees, Adults 30+</p>
                 </div>
-                
-                <!-- Platinum -->
-                <div class="pricing-card">
-                    <div class="plan-name" style="color: #a0aec0;">Platinum</div>
-                    <div class="plan-params">Full Body Checkup<br>76 Parameters</div>
+                <!-- Diabetes -->
+                <div class="pricing-card fade-in">
+                    <div class="plan-name">Diabetes Care</div>
+                    <div class="plan-params">25+ Tests Included</div>
                     <ul class="plan-highlights">
-                        <li><i class="fas fa-check"></i> All routine tests</li>
-                        <li><i class="fas fa-check"></i> Advanced organ profiling</li>
-                        <li><i class="fas fa-check"></i> Includes Vitamin & CRP</li>
+                        <li><i class="fas fa-check"></i> HbA1c, Lipid profile</li>
+                        <li><i class="fas fa-check"></i> Kidney function test</li>
+                        <li><i class="fas fa-check"></i> Microalbumin screening</li>
                     </ul>
                     <div class="price-container">
-                        <span class="price-original">₹4910</span>
-                        <span class="price-discounted">₹2299/-</span>
+                        <span class="price-original">₹3,499</span>
+                        <span class="price-discounted">₹1,999/-</span>
                     </div>
-                    <a href="appointment.html?plan=platinum" class="btn btn-accent">Book Platinum Package</a>
-                    <p class="microcopy">* Reports delivered within 24 hours</p>
+                    <a href="appointment.html?plan=diabetes" class="btn btn-accent">Book Now</a>
+                    <p class="microcopy">* Includes complete diabetes monitoring</p>
                 </div>
-                
-                <!-- Diamond -->
-                <div class="pricing-card">
-                    <div class="plan-name" style="color: #2CBFB5;">Diamond</div>
-                    <div class="plan-params">Full Body Checkup<br>79 Parameters</div>
+                <!-- Women's Wellness -->
+                <div class="pricing-card fade-in">
+                    <div class="plan-name" style="color: #E91E8C;">Women's Wellness</div>
+                    <div class="plan-params">45+ Tests Included</div>
                     <ul class="plan-highlights">
-                        <li><i class="fas fa-check"></i> Comprehensive screening</li>
-                        <li><i class="fas fa-check"></i> Specialized organ markers</li>
-                        <li><i class="fas fa-check"></i> Includes Iron profile</li>
+                        <li><i class="fas fa-check"></i> Hormonal & Thyroid panel</li>
+                        <li><i class="fas fa-check"></i> Vitamins & bone health</li>
+                        <li><i class="fas fa-check"></i> Complete blood work</li>
                     </ul>
                     <div class="price-container">
-                        <span class="price-original">₹7310</span>
-                        <span class="price-discounted">₹2999/-</span>
+                        <span class="price-original">₹5,499</span>
+                        <span class="price-discounted">₹3,499/-</span>
                     </div>
-                    <a href="appointment.html?plan=diamond" class="btn btn-accent">Book Diamond Package</a>
-                    <p class="microcopy">* Reports delivered within 24 hours</p>
+                    <a href="appointment.html?plan=womens" class="btn btn-accent">Book Now</a>
+                    <p class="microcopy">* Designed for women 25-50 years</p>
+                </div>
+                <!-- Senior Citizen -->
+                <div class="pricing-card fade-in">
+                    <div class="plan-name" style="color: #2CBFB5;">Senior Citizen</div>
+                    <div class="plan-params">70+ Tests Included</div>
+                    <ul class="plan-highlights">
+                        <li><i class="fas fa-check"></i> Cardiac, Bone, Kidney</li>
+                        <li><i class="fas fa-check"></i> Vitamin & organ profiling</li>
+                        <li><i class="fas fa-check"></i> Free ECG included</li>
+                    </ul>
+                    <div class="price-container">
+                        <span class="price-original">₹7,999</span>
+                        <span class="price-discounted">₹4,499/-</span>
+                    </div>
+                    <a href="appointment.html?plan=senior" class="btn btn-accent">Book Now</a>
+                    <p class="microcopy">* Designed for 60+ age group</p>
                 </div>
             </div>
-
-            <!-- Trust Elements -->
-            <div class="trust-elements">
-                <div class="trust-item"><i class="fas fa-certificate"></i> NABL Certified</div>
-                <div class="trust-item"><i class="fas fa-users"></i> 1000+ Patients Served</div>
-                <div class="trust-item"><i class="fas fa-file-medical-alt"></i> Same Day Reports</div>
+            <div class="text-center mt-2">
+                <a href="packages.html" class="btn btn-outline">View All Packages & Compare →</a>
             </div>
         </div>
     </section>
 
-    <!-- Comparison Table Section -->
-    <section class="section section-alt" id="compare">
+    <!-- Service Catalog with Filters -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Complete Test Catalog</h2>
+                <p>Search and filter to find the right test for you</p>
+            </div>
+
+            <div class="catalog-layout">
+                <!-- Sidebar Filters -->
+                <div class="catalog-sidebar">
+                    <div class="catalog-search">
+                        <i class="fas fa-search"></i>
+                        <input type="text" placeholder="Search for a test..." id="catalogSearchInput">
+                    </div>
+
+                    <div class="filter-group" data-filter="category">
+                        <h4>By Category</h4>
+                        <label class="filter-option"><input type="checkbox" value="radiology"> Radiology</label>
+                        <label class="filter-option"><input type="checkbox" value="pathology"> Pathology</label>
+                        <label class="filter-option"><input type="checkbox" value="cardiology"> Cardiology</label>
+                        <label class="filter-option"><input type="checkbox" value="package"> Packages</label>
+                    </div>
+
+                    <div class="filter-group" data-filter="price">
+                        <h4>By Price</h4>
+                        <label class="filter-option"><input type="checkbox" value="under500"> Under ₹500</label>
+                        <label class="filter-option"><input type="checkbox" value="500-2000"> ₹500 - ₹2,000</label>
+                        <label class="filter-option"><input type="checkbox" value="2000-5000"> ₹2,000 - ₹5,000</label>
+                        <label class="filter-option"><input type="checkbox" value="above5000"> Above ₹5,000</label>
+                    </div>
+
+                    <div class="filter-group" data-filter="report">
+                        <h4>Report Time</h4>
+                        <label class="filter-option"><input type="checkbox" value="sameday"> Same Day</label>
+                        <label class="filter-option"><input type="checkbox" value="24hrs"> 24 Hours</label>
+                        <label class="filter-option"><input type="checkbox" value="48hrs"> 48 Hours</label>
+                    </div>
+
+                    <div class="filter-group" data-filter="fasting">
+                        <h4>Preparation</h4>
+                        <label class="filter-option"><input type="checkbox" value="fasting"> Fasting Required</label>
+                        <label class="filter-option"><input type="checkbox" value="nofasting"> No Fasting</label>
+                    </div>
+                </div>
+
+                <!-- Test Listings -->
+                <div class="catalog-main">
+                    <!-- Radiology -->
+                    <div class="service-category-header"><i class="fas fa-x-ray"></i><h3 style="margin-bottom:0;">Radiology</h3></div>
+                    <div class="service-grid-4" style="margin-bottom: 2.5rem;">
+                        <div class="service-card-mini test-listing-card fade-in" data-category="radiology" data-price="2000-5000" data-report="24hrs" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-brain"></i></div>
+                            <h4>MRI Brain</h4>
+                            <p class="service-mini-desc">High-resolution brain imaging for neurological assessment</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 24hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                                <a href="#" class="view-details view-details-toggle">View Details →</a>
+                            </div>
+                            <div class="test-detail-expandable">
+                                <p><strong>Also known as:</strong> Brain MRI, Cranial MRI</p>
+                                <p><strong>Why this test:</strong> To detect brain tumors, stroke, infections, developmental anomalies, and other brain conditions.</p>
+                                <p><strong>Duration:</strong> 20-30 minutes</p>
+                                <p><strong>Preparation:</strong> Remove all metal objects. Inform about implants. No fasting required unless specified.</p>
+                                <p><strong>Home Collection:</strong> Not Available (Center visit required)</p>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="radiology" data-price="2000-5000" data-report="24hrs" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-bone"></i></div>
+                            <h4>MRI Spine</h4>
+                            <p class="service-mini-desc">Detailed spinal cord and vertebral imaging</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 24hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                                <a href="#" class="view-details view-details-toggle">View Details →</a>
+                            </div>
+                            <div class="test-detail-expandable">
+                                <p><strong>Also known as:</strong> Spinal MRI, Lumbar MRI</p>
+                                <p><strong>Why this test:</strong> To evaluate disc herniation, spinal stenosis, infections, and tumors of the spine.</p>
+                                <p><strong>Duration:</strong> 30-45 minutes</p>
+                                <p><strong>Preparation:</strong> Wear comfortable clothing. No metal objects. Inform about pacemakers.</p>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="radiology" data-price="2000-5000" data-report="sameday" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-lungs"></i></div>
+                            <h4>CT Scan Chest</h4>
+                            <p class="service-mini-desc">Detailed chest imaging for lung and thorax</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: Same Day | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                                <a href="#" class="view-details view-details-toggle">View Details →</a>
+                            </div>
+                            <div class="test-detail-expandable">
+                                <p><strong>Why this test:</strong> To detect lung infections, tumors, pulmonary embolism, and chest abnormalities.</p>
+                                <p><strong>Duration:</strong> 10-15 minutes</p>
+                                <p><strong>Preparation:</strong> May require fasting 4-6 hours if contrast is used. Drink plenty of water.</p>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="radiology" data-price="under500" data-report="sameday" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-x-ray"></i></div>
+                            <h4>Digital X-Ray</h4>
+                            <p class="service-mini-desc">Quick digital radiography for bones and chest</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: Same Day | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="radiology" data-price="500-2000" data-report="sameday" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-baby"></i></div>
+                            <h4>Ultrasound Abdomen</h4>
+                            <p class="service-mini-desc">Complete abdominal organ evaluation</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: Same Day | <i class="fas fa-utensils" style="color: var(--teal);"></i> Fasting: 6hrs</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pathology -->
+                    <div class="service-category-header"><i class="fas fa-vials"></i><h3 style="margin-bottom:0;">Pathology</h3></div>
+                    <div class="service-grid-4" style="margin-bottom: 2.5rem;">
+                        <div class="service-card-mini test-listing-card fade-in" data-category="pathology" data-price="under500" data-report="24hrs" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-tint"></i></div>
+                            <h4>Complete Blood Count</h4>
+                            <p class="service-mini-desc">24+ parameter blood analysis including Hemoglobin, WBC, Platelets</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 24hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="pathology" data-price="under500" data-report="24hrs" data-fasting="fasting">
+                            <div class="service-mini-icon"><i class="fas fa-heart"></i></div>
+                            <h4>Lipid Profile</h4>
+                            <p class="service-mini-desc">Cholesterol, Triglycerides, HDL, LDL, VLDL, TC/HDL Ratio</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 24hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> Fasting: 10-12hrs</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="pathology" data-price="under500" data-report="24hrs" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-disease"></i></div>
+                            <h4>Thyroid Profile (T3,T4,TSH)</h4>
+                            <p class="service-mini-desc">Complete thyroid function assessment panel</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 24hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="pathology" data-price="500-2000" data-report="24hrs" data-fasting="fasting">
+                            <div class="service-mini-icon"><i class="fas fa-candy-cane"></i></div>
+                            <h4>HbA1c</h4>
+                            <p class="service-mini-desc">Glycated hemoglobin for 3-month blood sugar average</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 24hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="pathology" data-price="500-2000" data-report="24hrs" data-fasting="fasting">
+                            <div class="service-mini-icon"><i class="fas fa-liver"></i></div>
+                            <h4>Liver Function Test</h4>
+                            <p class="service-mini-desc">SGOT, SGPT, Bilirubin, ALP, Albumin & more</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 24hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> Fasting: 10-12hrs</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="pathology" data-price="500-2000" data-report="24hrs" data-fasting="fasting">
+                            <div class="service-mini-icon"><i class="fas fa-kidneys"></i></div>
+                            <h4>Kidney Function Test</h4>
+                            <p class="service-mini-desc">Creatinine, BUN, Uric Acid, Electrolytes, Calcium</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 24hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> Fasting: 10-12hrs</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="pathology" data-price="500-2000" data-report="48hrs" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-sun"></i></div>
+                            <h4>Vitamin D (25-OH)</h4>
+                            <p class="service-mini-desc">Check for vitamin D deficiency and bone health</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 48hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="pathology" data-price="500-2000" data-report="48hrs" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-capsules"></i></div>
+                            <h4>Vitamin B12</h4>
+                            <p class="service-mini-desc">Essential vitamin level for nerve and blood health</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: 48hrs | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cardiology -->
+                    <div class="service-category-header"><i class="fas fa-heartbeat"></i><h3 style="margin-bottom:0;">Cardiology</h3></div>
+                    <div class="service-grid-4" style="margin-bottom: 2.5rem;">
+                        <div class="service-card-mini test-listing-card fade-in" data-category="cardiology" data-price="under500" data-report="sameday" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-wave-square"></i></div>
+                            <h4>ECG</h4>
+                            <p class="service-mini-desc">12-lead Electrocardiogram for heart rhythm analysis</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: Same Day | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="cardiology" data-price="2000-5000" data-report="sameday" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-heart"></i></div>
+                            <h4>2D Echo</h4>
+                            <p class="service-mini-desc">Echocardiography for heart structure and function</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: Same Day | <i class="fas fa-utensils" style="color: var(--teal);"></i> No Fasting</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                        <div class="service-card-mini test-listing-card fade-in" data-category="cardiology" data-price="2000-5000" data-report="sameday" data-fasting="nofasting">
+                            <div class="service-mini-icon"><i class="fas fa-running"></i></div>
+                            <h4>TMT (Treadmill Test)</h4>
+                            <p class="service-mini-desc">Exercise-based stress test for cardiac fitness assessment</p>
+                            <span class="service-price-badge">₹[PRICE]</span>
+                            <p class="service-mini-desc" style="margin-bottom: 0;"><i class="fas fa-clock" style="color: var(--teal);"></i> Report: Same Day | <i class="fas fa-utensils" style="color: var(--teal);"></i> Light meal OK</p>
+                            <div class="service-mini-actions" style="margin-top: 0.75rem;">
+                                <a href="appointment.html" class="btn btn-accent btn-sm">Book Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Package Comparison -->
+    <section class="section" id="compare">
         <div class="container">
             <div class="text-center mb-2">
                 <h2>Compare Our Health Packages</h2>
@@ -140,122 +438,35 @@
                     <thead>
                         <tr>
                             <th>Test Name</th>
-                            <th>Silver (69)</th>
-                            <th>Gold (71)</th>
-                            <th>Platinum (76)</th>
-                            <th>Diamond (79)</th>
+                            <th>Basic<br>₹999</th>
+                            <th>Master<br>₹2,999</th>
+                            <th>Executive<br>₹5,999</th>
+                            <th>Cardiac<br>₹3,999</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr class="table-section-row">
-                            <td colspan="5">Basic Tests</td>
-                        </tr>
-                        <tr>
-                            <td>Fasting Blood Glucose</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td>CBC</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Lipid Profile</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td>LFT</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td>RFT</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr>
-                            <td>Thyroid Profile</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr class="hidden-row">
-                            <td>Electrolytes</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr class="hidden-row">
-                            <td>Urine Analysis</td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        
-                        <tr class="table-section-row hidden-row">
-                            <td colspan="5">Advanced Tests</td>
-                        </tr>
-                        <tr class="hidden-row">
-                            <td>HbA1c</td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr class="hidden-row">
-                            <td>Vitamin Profile</td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr class="hidden-row">
-                            <td>CRP</td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        
-                        <tr class="table-section-row hidden-row">
-                            <td colspan="5">Specialized Tests</td>
-                        </tr>
-                        <tr class="hidden-row">
-                            <td>Lipase</td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr class="hidden-row">
-                            <td>Amylase</td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><i class="fas fa-check"></i></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
-                        <tr class="hidden-row">
-                            <td>Iron Profile</td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><span class="muted-icon">—</span></td>
-                            <td><i class="fas fa-check"></i></td>
-                        </tr>
+                        <tr class="table-section-row"><td colspan="5">Hematology</td></tr>
+                        <tr><td>Complete Blood Count</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
+                        <tr><td>ESR</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
+                        <tr class="table-section-row"><td colspan="5">Biochemistry</td></tr>
+                        <tr><td>Fasting Blood Glucose</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
+                        <tr><td>Lipid Profile</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
+                        <tr><td>Liver Function (LFT)</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><span class="muted-icon">—</span></td></tr>
+                        <tr><td>Kidney Function (RFT)</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><span class="muted-icon">—</span></td></tr>
+                        <tr><td>HbA1c</td><td><span class="muted-icon">—</span></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><span class="muted-icon">—</span></td></tr>
+                        <tr class="hidden-row table-section-row"><td colspan="5">Thyroid & Hormones</td></tr>
+                        <tr class="hidden-row"><td>Thyroid Profile (T3,T4,TSH)</td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><span class="muted-icon">—</span></td></tr>
+                        <tr class="hidden-row table-section-row"><td colspan="5">Vitamins</td></tr>
+                        <tr class="hidden-row"><td>Vitamin D (25-OH)</td><td><span class="muted-icon">—</span></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><span class="muted-icon">—</span></td></tr>
+                        <tr class="hidden-row"><td>Vitamin B12</td><td><span class="muted-icon">—</span></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><span class="muted-icon">—</span></td></tr>
+                        <tr class="hidden-row table-section-row"><td colspan="5">Cardiac Tests</td></tr>
+                        <tr class="hidden-row"><td>ECG</td><td><span class="muted-icon">—</span></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
+                        <tr class="hidden-row"><td>2D Echo</td><td><span class="muted-icon">—</span></td><td><span class="muted-icon">—</span></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
+                        <tr class="hidden-row"><td>TMT (Treadmill Test)</td><td><span class="muted-icon">—</span></td><td><span class="muted-icon">—</span></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
+                        <tr class="hidden-row"><td>hs-CRP</td><td><span class="muted-icon">—</span></td><td><span class="muted-icon">—</span></td><td><i class="fas fa-check"></i></td><td><i class="fas fa-check"></i></td></tr>
+                        <tr class="hidden-row table-section-row"><td colspan="5">Specialized</td></tr>
+                        <tr class="hidden-row"><td>Cancer Markers</td><td><span class="muted-icon">—</span></td><td><span class="muted-icon">—</span></td><td><i class="fas fa-check"></i></td><td><span class="muted-icon">—</span></td></tr>
+                        <tr class="hidden-row"><td>Iron Profile</td><td><span class="muted-icon">—</span></td><td><span class="muted-icon">—</span></td><td><i class="fas fa-check"></i></td><td><span class="muted-icon">—</span></td></tr>
                     </tbody>
                 </table>
             </div>
@@ -265,61 +476,142 @@
         </div>
     </section>
 
+    <!-- Equipment Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Our Equipment & Technology</h2>
+                <p>State-of-the-art medical equipment ensuring the most accurate results.</p>
+            </div>
+
+            <div class="equipment-card fade-in">
+                <div class="equipment-img">
+                    <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=600&auto=format&fit=crop" alt="MRI Scanner" loading="lazy">
+                </div>
+                <div class="equipment-content">
+                    <h3>1.5T MRI Scanner</h3>
+                    <p>Our high-field MRI system provides exceptional image quality for accurate diagnosis of neurological, musculoskeletal, and abdominal conditions.</p>
+                    <div class="equipment-features">
+                        <span>High Resolution</span>
+                        <span>Quiet Operation</span>
+                        <span>Wide Bore</span>
+                        <span>Fast Scanning</span>
+                    </div>
+                    <p style="font-size: 0.85rem;"><strong>Used for:</strong> Brain, Spine, Joint, Abdomen imaging<br><strong>Advantages:</strong> Superior soft tissue contrast, no ionizing radiation</p>
+                </div>
+            </div>
+
+            <div class="equipment-card fade-in">
+                <div class="equipment-img">
+                    <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?q=80&w=600&auto=format&fit=crop" alt="CT Scanner" loading="lazy">
+                </div>
+                <div class="equipment-content">
+                    <h3>128-Slice CT Scanner</h3>
+                    <p>Our multi-detector CT scanner enables rapid whole-body imaging with minimal radiation dose, ideal for emergency and routine diagnostics.</p>
+                    <div class="equipment-features">
+                        <span>Low Radiation</span>
+                        <span>128 Slices</span>
+                        <span>3D Reconstruction</span>
+                        <span>Fast Acquisition</span>
+                    </div>
+                    <p style="font-size: 0.85rem;"><strong>Used for:</strong> Whole body imaging, CT Angiography, Trauma<br><strong>Advantages:</strong> Quick diagnosis, detailed cross-sectional images</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Elements -->
+    <section class="section">
+        <div class="container">
+            <div class="trust-elements">
+                <div class="trust-item"><i class="fas fa-certificate"></i> NABL Certified</div>
+                <div class="trust-item"><i class="fas fa-shield-alt"></i> ISO 9001:2015</div>
+                <div class="trust-item"><i class="fas fa-users"></i> 10,000+ Patients Served</div>
+                <div class="trust-item"><i class="fas fa-file-medical-alt"></i> Same Day Reports</div>
+                <div class="trust-item"><i class="fas fa-home"></i> Free Home Collection</div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
                 <div>
-                    <h3 style="display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-heartbeat"></i> Uniscans & Labs
-                    </h3>
-                    <p>Providing accurate, accessible, and affordable diagnostic solutions. Trusted by thousands of patients and doctors across the city.</p>
+                    <h3 style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-heartbeat"></i> Uniscans & Labs</h3>
+                    <p class="footer-about-text">Providing accurate, accessible, and affordable diagnostic solutions. Trusted by thousands of patients and doctors.</p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
                 </div>
-                
                 <div>
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="appointment.html">Book Appointment</a></li>
+                        <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="faq.html"><i class="fas fa-chevron-right"></i> FAQs</a></li>
+                        <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h3>Our Services</h3>
                     <ul class="footer-links">
-                        <li><a href="services.html">MRI & CT Scan</a></li>
-                        <li><a href="services.html">Ultrasound</a></li>
-                        <li><a href="services.html">Pathology</a></li>
-                        <li><a href="services.html">X-Ray</a></li>
-                        <li><a href="services.html">Health Packages</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> MRI & CT Scan</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Pathology</a></li>
+                        <li><a href="services.html"><i class="fas fa-chevron-right"></i> Cardiology</a></li>
+                        <li><a href="packages.html"><i class="fas fa-chevron-right"></i> Health Packages</a></li>
                     </ul>
                 </div>
-                
                 <div>
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt" style="width: 20px;"></i> 123 Health Avenue, Medical District, Cityville 40001</li>
-                        <li><i class="fas fa-phone" style="width: 20px;"></i> +1 (800) 123-4567</li>
-                        <li><i class="fas fa-envelope" style="width: 20px;"></i> info@uniscanslabs.com</li>
-                        <li><i class="fas fa-clock" style="width: 20px;"></i> Mon-Sun: 7:00 AM - 9:00 PM</li>
+                        <li><i class="fas fa-map-marker-alt" style="width: 18px; color: var(--teal);"></i> [FULL_ADDRESS], [CITY]</li>
+                        <li><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone" style="width: 18px; color: var(--teal);"></i> +91 XXXXX-XXXXX</a></li>
+                        <li><a href="mailto:info@[DOMAIN]"><i class="fas fa-envelope" style="width: 18px; color: var(--teal);"></i> info@[DOMAIN]</a></li>
+                        <li><i class="fas fa-clock" style="width: 18px; color: var(--teal);"></i> Mon-Sun: 7 AM - 9 PM</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>Important</h3>
+                    <ul class="footer-links">
+                        <li><a href="privacy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li>
+                        <li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms & Conditions</a></li>
+                        <li><a href="refund.html"><i class="fas fa-chevron-right"></i> Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3>For Patients</h3>
+                    <ul class="footer-links">
+                        <li><a href="reports.html"><i class="fas fa-chevron-right"></i> Download Reports</a></li>
+                        <li><a href="reports.html"><i class="fas fa-chevron-right"></i> Track Test</a></li>
+                        <li><a href="test-catalog.html"><i class="fas fa-chevron-right"></i> Test Catalog</a></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="footer-bottom">
-                <p>&copy; 2026 Uniscans & Labs. All Rights Reserved. Designed for Health.</p>
+                <div class="footer-bottom-inner">
+                    <p>&copy; 2026 Uniscans & Labs. All Rights Reserved.</p>
+                    <div class="payment-methods"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fab fa-google-pay"></i></div>
+                    <div class="ssl-badge"><i class="fas fa-lock"></i> SSL Secured</div>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp -->
-    <a href="#" class="whatsapp-float" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20test." class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="tooltip">Chat with us</span></a>
+    <button class="back-to-top" id="backToTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <div class="cookie-banner" id="cookieBanner"><p>We use cookies to improve your experience. <a href="privacy.html">Learn More</a></p><div class="cookie-buttons"><button class="btn cookie-btn-decline" id="cookieDecline">Decline</button><button class="btn btn-accent" id="cookieAccept">Accept</button></div></div>
+
+    <div class="mobile-bottom-cta">
+        <a href="tel:+91XXXXXXXXXX" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a>
+        <a href="appointment.html" class="btn btn-accent"><i class="fas fa-calendar-check"></i> Book Test</a>
+    </div>
 
     <script src="script.js"></script>
 </body>

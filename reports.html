@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Reports | Uniscans & Labs Patient Portal</title>
+    <meta name="description" content="Login to Uniscans & Labs patient portal. Download test reports, track test status, and view medical history securely online.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
+    <div class="top-bar"><div class="container"><div class="top-bar-left"><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone-alt"></i> +91 XXXXX-XXXXX</a><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a></div><div class="top-bar-right"><a href="reports.html" style="color: var(--teal); font-weight: 600;">Patient Portal</a></div></div></div>
+    <header class="navbar" id="navbar"><div class="container"><a href="index.html" class="logo"><i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span></a><nav class="nav-links" id="navLinks"><a href="index.html">Home</a><div class="nav-dropdown"><a href="services.html">Services <i class="fas fa-chevron-down"></i></a><div class="dropdown-menu"><a href="services.html"><i class="fas fa-stethoscope"></i> All Services</a><a href="packages.html"><i class="fas fa-box-open"></i> Health Packages</a></div></div><a href="about.html">About Us</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a><a href="appointment.html" class="btn btn-accent">Book Appointment</a></nav><div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div></div></header>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="breadcrumb" style="padding-top: 1rem; background: var(--section-alt);"><div class="container"><ul class="breadcrumb-list"><li><a href="index.html">Home</a></li><li><span class="separator"><i class="fas fa-chevron-right"></i></span></li><li class="active">Patient Portal</li></ul></div></div>
+
+    <main id="main-content">
+
+    <section class="section" style="background: linear-gradient(135deg, var(--section-alt), var(--section-light-purple)); min-height: 70vh; display: flex; align-items: center;">
+        <div class="container">
+
+            <div class="portal-login-card">
+                <div class="text-center" style="margin-bottom: 2rem;">
+                    <i class="fas fa-user-shield" style="font-size: 2.5rem; color: var(--teal); margin-bottom: 1rem;"></i>
+                    <h1 style="font-size: 1.5rem;">Patient Portal</h1>
+                    <p style="font-size: 0.9rem;">Access your reports, track tests, and view history.</p>
+                </div>
+
+                <!-- Login Tabs -->
+                <div class="portal-login-tabs">
+                    <div class="portal-login-tab active" data-tab="phone">Phone + OTP</div>
+                    <div class="portal-login-tab" data-tab="booking">Booking ID</div>
+                </div>
+
+                <!-- Phone + OTP Login -->
+                <div class="portal-login-form" data-tab="phone">
+                    <form>
+                        <div class="form-group">
+                            <label for="portalPhone">Registered Phone Number</label>
+                            <input type="tel" id="portalPhone" class="form-control" placeholder="+91 XXXXX-XXXXX" required>
+                            <span class="form-error">Enter your 10-digit registered number</span>
+                        </div>
+                        <button type="button" class="btn btn-accent" style="width: 100%; margin-bottom: 1rem;" onclick="document.getElementById('otpField').style.display='block'; this.textContent='Resend OTP (30s)'">Send OTP</button>
+                        <div class="form-group" id="otpField" style="display: none;">
+                            <label for="otpInput">Enter OTP</label>
+                            <input type="text" id="otpInput" class="form-control" placeholder="Enter 6-digit OTP" maxlength="6">
+                            <span class="form-note">OTP sent to your registered mobile number</span>
+                        </div>
+                        <div id="otpField" style="display: none;">
+                            <button type="button" class="btn btn-accent" style="width: 100%;" onclick="alert('This is a UI demo. In production, this would verify OTP and show your reports.')">Verify & Login</button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Booking ID Login -->
+                <div class="portal-login-form" data-tab="booking" style="display: none;">
+                    <form>
+                        <div class="form-group">
+                            <label for="bookingId">Booking ID</label>
+                            <input type="text" id="bookingId" class="form-control" placeholder="e.g., UNI-2026-12345" required>
+                            <span class="form-error">Enter valid booking ID</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" class="form-control" required>
+                        </div>
+                        <button type="button" class="btn btn-accent" style="width: 100%;" onclick="alert('This is a UI demo. In production, this would verify and show your report.')">View Report</button>
+                    </form>
+                </div>
+
+                <div style="margin-top: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border-color); text-align: center;">
+                    <p style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Having trouble accessing your reports?</p>
+                    <a href="tel:+91XXXXXXXXXX" style="color: var(--teal); font-weight: 600; font-size: 0.85rem;"><i class="fas fa-phone-alt"></i> Call +91 XXXXX-XXXXX</a>
+                    <span style="color: var(--text-muted); margin: 0 0.5rem;">or</span>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20need%20help%20accessing%20my%20report." target="_blank" rel="noopener" style="color: var(--whatsapp-green); font-weight: 600; font-size: 0.85rem;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 2rem;">
+                <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem;">
+                        <i class="fas fa-lock" style="color: var(--teal);"></i> 256-bit SSL Encrypted
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem;">
+                        <i class="fas fa-shield-alt" style="color: var(--teal);"></i> OTP Verified Access
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem;">
+                        <i class="fas fa-eye-slash" style="color: var(--teal);"></i> HIPAA Compliant
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    </main>
+
+    <footer class="footer"><div class="container"><div class="footer-bottom"><div class="footer-bottom-inner"><p>&copy; 2026 Uniscans & Labs. All Rights Reserved.</p><div class="ssl-badge"><i class="fas fa-lock"></i> SSL Secured</div></div></div></div></footer>
+    <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    <button class="back-to-top" id="backToTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <script src="script.js"></script>
+</body>
+</html>

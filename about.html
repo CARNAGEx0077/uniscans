@@ -3,68 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Uniscans & Labs</title>
-    <meta name="description" content="Learn about Uniscans & Labs, our mission, vision, and the expert medical team behind our diagnostic accuracy.">
+    <title>About Us | Uniscans & Labs - Trusted Diagnostics Since [YEAR]</title>
+    <meta name="description" content="Learn about Uniscans & Labs - our NABL accredited laboratory, experienced team of 50+ medical professionals, and our commitment to accurate, affordable diagnostics.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Sticky Navbar -->
-    <header class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span>
-            </a>
-            
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="about.html" class="active">About Us</a>
-                <a href="faq.html">FAQs</a>
-                <a href="contact.html">Contact</a>
-                <a href="appointment.html" class="btn btn-accent">Book Appointment</a>
-            </nav>
-            
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+    <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner" id="promoBanner">🎉 Limited Time: Master Health Checkup @ ₹2,999 (Save ₹1,000) | <a href="packages.html">Book Now →</a><button class="promo-close" id="promoClose" aria-label="Close">×</button></div>
+
+    <!-- Top Bar -->
+    <div class="top-bar"><div class="container"><div class="top-bar-left"><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone-alt"></i> +91 XXXXX-XXXXX</a><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a><span class="location-badge"><i class="fas fa-map-marker-alt"></i> Now in [CITY_NAME]</span></div><div class="top-bar-right"><a href="reports.html">View Reports</a><span class="top-bar-divider">|</span><a href="reports.html">Track Test</a></div></div></div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar"><div class="container"><a href="index.html" class="logo"><i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span></a><nav class="nav-links" id="navLinks"><a href="index.html">Home</a><div class="nav-dropdown"><a href="services.html">Services <i class="fas fa-chevron-down"></i></a><div class="dropdown-menu"><a href="services.html"><i class="fas fa-stethoscope"></i> All Services</a><a href="packages.html"><i class="fas fa-box-open"></i> Health Packages</a><a href="test-catalog.html"><i class="fas fa-list-alt"></i> Test Catalog</a><a href="preparation.html"><i class="fas fa-clipboard-list"></i> Preparation Guides</a></div></div><a href="about.html" class="active">About Us</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a><a href="appointment.html" class="btn btn-accent">Book Appointment</a></nav><div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div></div></header>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar"><div class="trust-bar-inner"><div class="trust-bar-item"><i class="fas fa-certificate"></i> NABL Certified</div><div class="trust-bar-item"><i class="fas fa-shield-alt"></i> ISO 9001:2015</div><div class="trust-bar-item"><i class="fas fa-users"></i> 10,000+ Happy Patients</div><div class="trust-bar-item"><i class="fas fa-clock"></i> 24hr Reports</div><div class="trust-bar-item"><i class="fas fa-home"></i> Free Home Collection</div></div></div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" style="padding-top: 1rem; background: var(--section-alt);"><div class="container"><ul class="breadcrumb-list"><li><a href="index.html">Home</a></li><li><span class="separator"><i class="fas fa-chevron-right"></i></span></li><li class="active">About Us</li></ul></div></div>
+
+    <main id="main-content">
 
     <!-- Page Header -->
-    <section class="section section-alt" style="padding-top: 10rem; padding-bottom: 4rem;">
+    <section class="section section-alt" style="padding-top: 2rem; padding-bottom: 3rem;">
         <div class="container text-center">
             <h1>About Uniscans & Labs</h1>
-            <p>A legacy of precision, trust, and advanced healthcare since 2010.</p>
+            <p style="font-size: 1.1rem;">A legacy of precision, trust, and advanced healthcare since [YEAR].</p>
         </div>
     </section>
 
-    <!-- About Intro -->
+    <!-- Company Story -->
     <section class="section">
         <div class="container about-grid">
             <div class="about-content">
-                <h2 style="color: var(--primary-color);">Excellence in Medical Diagnostics</h2>
+                <h2>Excellence in Medical Diagnostics</h2>
                 <p>Welcome to Uniscans & Labs. For over a decade, we have dedicated ourselves to transforming the landscape of medical diagnostics by combining state-of-the-art technological infrastructure with the expertise of seasoned medical professionals. We understand that a correct diagnosis is the crucial first step to effective treatment.</p>
                 <p>We pride ourselves on providing a patient-centric environment. Whether it's a routine blood test or an advanced MRI scan, every procedure is carried out with utmost care, minimal wait times, and a commitment to clinical excellence.</p>
                 
                 <div style="margin-top: 2rem;">
                     <h3>Our Mission</h3>
-                    <p style="border-left: 4px solid var(--accent-color); padding-left: 1rem; font-style: italic;">To provide accurate, timely, and accessible diagnostic services to all segments of society utilizing advanced medical technology and compassionate care.</p>
+                    <p style="border-left: 4px solid var(--teal); padding-left: 1rem; font-style: italic;">"To provide accurate, timely, and accessible diagnostic services to all segments of society utilizing advanced medical technology and compassionate care."</p>
                 </div>
                 
                 <div style="margin-top: 1.5rem;">
                     <h3>Our Vision</h3>
-                    <p style="border-left: 4px solid var(--primary-color); padding-left: 1rem; font-style: italic;">To be the region's most trusted diagnostic partner, establishing a benchmark for global quality standards in pathology and radiology.</p>
+                    <p style="border-left: 4px solid var(--purple); padding-left: 1rem; font-style: italic;">"To be the most trusted diagnostic partner for patients and doctors across [REGION/STATE], establishing a benchmark for global quality standards."</p>
                 </div>
             </div>
             <div class="about-image">
-                <img src="https://images.unsplash.com/photo-1551076805-e18690c5e561?q=80&w=800&auto=format&fit=crop" alt="Laboratory Infrastructure">
+                <img src="https://images.unsplash.com/photo-1551076805-e18690c5e561?q=80&w=800&auto=format&fit=crop" alt="Laboratory Infrastructure" loading="lazy">
             </div>
         </div>
     </section>
 
-    <!-- NABL Highlight -->
+    <!-- Core Values -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Our Core Values</h2>
+                <p>The principles that guide everything we do at Uniscans & Labs.</p>
+            </div>
+            <div class="values-grid">
+                <div class="value-card fade-in">
+                    <i class="fas fa-bullseye"></i>
+                    <h4>Accuracy First</h4>
+                    <p>Precision in every test, every time</p>
+                </div>
+                <div class="value-card fade-in">
+                    <i class="fas fa-hands-holding-child"></i>
+                    <h4>Patient-Centric</h4>
+                    <p>Your comfort is our priority</p>
+                </div>
+                <div class="value-card fade-in">
+                    <i class="fas fa-scale-balanced"></i>
+                    <h4>Ethical Practices</h4>
+                    <p>Transparent and honest always</p>
+                </div>
+                <div class="value-card fade-in">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Innovation</h4>
+                    <p>Continuous technology upgrades</p>
+                </div>
+                <div class="value-card fade-in">
+                    <i class="fas fa-coins"></i>
+                    <h4>Affordability</h4>
+                    <p>Quality care at fair prices</p>
+                </div>
+                <div class="value-card fade-in">
+                    <i class="fas fa-award"></i>
+                    <h4>Excellence</h4>
+                    <p>Exceeding expectations daily</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Journey Timeline -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Our Journey</h2>
+                <p>Key milestones that shaped Uniscans & Labs into what it is today.</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">[YEAR]</span>
+                        <h4>Founded</h4>
+                        <p>Established first diagnostic center in [CITY] with a vision to make quality diagnostics accessible to all.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">[YEAR+2]</span>
+                        <h4>NABL Accreditation</h4>
+                        <p>Achieved NABL accreditation, certifying our laboratory meets the highest national quality standards.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">[YEAR+4]</span>
+                        <h4>Expansion</h4>
+                        <p>Expanded to [X] locations across [CITY/REGION], serving more communities with accessible diagnostics.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">[YEAR+6]</span>
+                        <h4>Advanced MRI Services</h4>
+                        <p>Introduced 1.5T MRI scanner and 128-slice CT scanner for advanced imaging capabilities.</p>
+                    </div>
+                </div>
+                <div class="timeline-item fade-in">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <span class="timeline-year">[CURRENT_YEAR]</span>
+                        <h4>50,000+ Patients Served</h4>
+                        <p>Crossed the milestone of 50,000+ happy patients with a 99.9% accuracy rate and growing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NABL Certification -->
     <section class="section section-alt text-center">
         <div class="container">
             <h2>Our Commitment to Quality</h2>
@@ -79,98 +171,192 @@
         </div>
     </section>
 
-    <!-- Team Section -->
+    <!-- Leadership Team -->
     <section class="section" id="team">
         <div class="container">
             <div class="text-center mb-2">
-                <h2>Our Founding Team</h2>
-                <p>Meet the visionaries behind Uniscans & Labs.</p>
+                <h2>Our Leadership Team</h2>
+                <p>Meet the visionaries and experts behind Uniscans & Labs.</p>
             </div>
             
             <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=400&auto=format&fit=crop" alt="Dr. John Doe" class="staff-img">
+                <div class="staff-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?q=80&w=400&auto=format&fit=crop" alt="Founder" class="staff-img" loading="lazy">
                     <div class="staff-info">
-                        <h3>Dr. Arthur Jenkins</h3>
-                        <p style="color: var(--accent-color); font-weight: 500;">Founder & Chief Radiologist</p>
-                        <p>MD Radiodiagnosis with over 15 years of experience in advanced imaging methodologies.</p>
+                        <h3>Dr. [FOUNDER_NAME]</h3>
+                        <p style="color: var(--teal); font-weight: 600; margin-bottom: 0.5rem;">Founder & Chief Radiologist</p>
+                        <div class="staff-badges">
+                            <span class="staff-badge">MD Radiodiagnosis</span>
+                            <span class="staff-badge experience">15+ Yrs Exp</span>
+                        </div>
+                        <p style="font-size: 0.85rem; margin-top: 0.75rem;">Pioneered advanced imaging diagnostics in [REGION]. With a focus on accessible healthcare, Dr. [FOUNDER_NAME] built Uniscans from a single-center pathology lab into a multi-location diagnostic powerhouse.</p>
+                        <div class="staff-meta">
+                            <span><i class="fas fa-id-card"></i> Reg: [REG_NO]</span>
+                            <span><i class="fas fa-language"></i> English, Hindi, Tamil</span>
+                        </div>
                     </div>
                 </div>
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=400&auto=format&fit=crop" alt="Dr. Sarah Lee" class="staff-img">
+                <div class="staff-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=400&auto=format&fit=crop" alt="Co-Founder" class="staff-img" loading="lazy">
                     <div class="staff-info">
-                        <h3>Dr. Sarah Lee</h3>
-                        <p style="color: var(--accent-color); font-weight: 500;">Co-Founder & Lead Pathologist</p>
-                        <p>MBBS, MD Pathology. Specializes in hematology and clinical biochemistry.</p>
+                        <h3>Dr. [COFOUNDER_NAME]</h3>
+                        <p style="color: var(--teal); font-weight: 600; margin-bottom: 0.5rem;">Co-Founder & Lead Pathologist</p>
+                        <div class="staff-badges">
+                            <span class="staff-badge">MBBS, MD Pathology</span>
+                            <span class="staff-badge experience">12+ Yrs Exp</span>
+                        </div>
+                        <p style="font-size: 0.85rem; margin-top: 0.75rem;">Specializes in clinical biochemistry and hematology. Dr. [COFOUNDER_NAME] leads our pathology department with a focus on quality control protocols and automated analyzer precision.</p>
+                        <div class="staff-meta">
+                            <span><i class="fas fa-id-card"></i> Reg: [REG_NO]</span>
+                            <span><i class="fas fa-language"></i> English, Hindi</span>
+                        </div>
                     </div>
                 </div>
-                <div class="staff-card">
-                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=400&auto=format&fit=crop" alt="Dr. Michael Chang" class="staff-img">
+                <div class="staff-card fade-in">
+                    <img src="https://images.unsplash.com/photo-1537368910025-700350fe46c7?q=80&w=400&auto=format&fit=crop" alt="Medical Director" class="staff-img" loading="lazy">
                     <div class="staff-info">
-                        <h3>Dr. Michael Chang</h3>
-                        <p style="color: var(--accent-color); font-weight: 500;">Medical Director</p>
-                        <p>DNB Radiodiagnosis. Ensures all operational standard operating procedures are strictly followed.</p>
+                        <h3>Dr. [DIRECTOR_NAME]</h3>
+                        <p style="color: var(--teal); font-weight: 600; margin-bottom: 0.5rem;">Medical Director</p>
+                        <div class="staff-badges">
+                            <span class="staff-badge">DNB Radiodiagnosis</span>
+                            <span class="staff-badge experience">10+ Yrs Exp</span>
+                        </div>
+                        <p style="font-size: 0.85rem; margin-top: 0.75rem;">Ensures all operational SOPs are strictly followed across every center. Oversees quality management, equipment calibration schedules, and patient safety protocols.</p>
+                        <div class="staff-meta">
+                            <span><i class="fas fa-id-card"></i> Reg: [REG_NO]</span>
+                            <span><i class="fas fa-language"></i> English, Tamil</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- Infrastructure -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Infrastructure & Facilities</h2>
+                <p>Modern, hygienic, and patient-friendly diagnostic centers.</p>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="card fade-in">
+                    <i class="fas fa-hospital card-icon"></i>
+                    <h3>Our Centers</h3>
+                    <p><strong>[X] locations</strong> across [CITY/REGION]</p>
+                    <p>Total area: [X,XXX] sq. ft.<br>Daily capacity: [XXX] patients</p>
+                </div>
+                <div class="card fade-in">
+                    <i class="fas fa-building card-icon"></i>
+                    <h3>Facilities Available</h3>
+                    <p>✓ Dedicated radiology wing<br>✓ Advanced pathology lab<br>✓ Separate collection area<br>✓ Comfortable waiting lounge<br>✓ Wheelchair accessibility</p>
+                </div>
+                <div class="card fade-in">
+                    <i class="fas fa-shield-virus card-icon"></i>
+                    <h3>Quality & Safety</h3>
+                    <p>✓ NABL accredited processes<br>✓ Regular equipment calibration<br>✓ Infection control protocols<br>✓ Biomedical waste management<br>✓ Data privacy measures</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Detailed -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>What Makes Us Different</h2>
+                <p>7 reasons why thousands of patients and doctors trust Uniscans & Labs.</p>
+            </div>
+            <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+                <div class="card fade-in" style="text-align: left;">
+                    <i class="fas fa-bullseye" style="font-size: 1.8rem; color: var(--teal); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.15rem;">Accuracy & Reliability</h3>
+                    <p style="font-size: 0.85rem;">NABL certified laboratory with stringent quality control protocols. Regular proficiency testing and cross-verification of critical results ensures 99.9% accuracy.</p>
+                </div>
+                <div class="card fade-in" style="text-align: left;">
+                    <i class="fas fa-microchip" style="font-size: 1.8rem; color: var(--teal); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.15rem;">Advanced Technology</h3>
+                    <p style="font-size: 0.85rem;">Latest 1.5T MRI & 128-slice CT scanners, fully automated analyzers, digital X-ray systems, and advanced ultrasound machines with regular upgrades.</p>
+                </div>
+                <div class="card fade-in" style="text-align: left;">
+                    <i class="fas fa-users-cog" style="font-size: 1.8rem; color: var(--teal); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.15rem;">Experienced Team</h3>
+                    <p style="font-size: 0.85rem;">[XX] qualified doctors, [XXX] trained technicians with continuous training programs and [XXX+] years of combined experience in diagnostics.</p>
+                </div>
+                <div class="card fade-in" style="text-align: left;">
+                    <i class="fas fa-truck" style="font-size: 1.8rem; color: var(--teal); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.15rem;">Patient Convenience</h3>
+                    <p style="font-size: 0.85rem;">Free home sample collection, online booking, multiple locations, extended hours (7 AM - 9 PM), and same-day appointments available.</p>
+                </div>
+                <div class="card fade-in" style="text-align: left;">
+                    <i class="fas fa-bolt" style="font-size: 1.8rem; color: var(--teal); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.15rem;">Fast Reporting</h3>
+                    <p style="font-size: 0.85rem;">Most reports in 24 hours. Critical reports same day. SMS & email notifications with 24/7 online access and doctor report explanation.</p>
+                </div>
+                <div class="card fade-in" style="text-align: left;">
+                    <i class="fas fa-tags" style="font-size: 1.8rem; color: var(--teal); margin-bottom: 1rem;"></i>
+                    <h3 style="font-size: 1.15rem;">Affordable Pricing</h3>
+                    <p style="font-size: 0.85rem;">Transparent pricing policy with no hidden charges. Regular health packages, seasonal discounts, and corporate tie-ups for additional savings.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Numbers That Matter -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="text-center" style="color: white; margin-bottom: 2rem;">
+                <h2 style="color: white;">Numbers That Matter</h2>
+                <p style="color: rgba(255,255,255,0.8);">Our track record speaks for itself.</p>
+            </div>
+            <div class="stats-grid">
+                <div class="stat-item fade-in"><div class="stat-icon"><i class="fas fa-smile"></i></div><div class="stat-number" data-count="50000" data-suffix="+">0</div><div class="stat-label">Happy Patients</div></div>
+                <div class="stat-item fade-in"><div class="stat-icon"><i class="fas fa-vial"></i></div><div class="stat-number" data-count="150000" data-suffix="+">0</div><div class="stat-label">Tests Conducted</div></div>
+                <div class="stat-item fade-in"><div class="stat-icon"><i class="fas fa-map-marker-alt"></i></div><div class="stat-number" data-count="15" data-suffix="+">0</div><div class="stat-label">Locations</div></div>
+                <div class="stat-item fade-in"><div class="stat-icon"><i class="fas fa-building"></i></div><div class="stat-number" data-count="100" data-suffix="+">0</div><div class="stat-label">Corporate Clients</div></div>
+                <div class="stat-item fade-in"><div class="stat-icon"><i class="fas fa-bullseye"></i></div><div class="stat-number" data-count="99.9" data-suffix="%">0</div><div class="stat-label">Accuracy Rate</div></div>
+                <div class="stat-item fade-in"><div class="stat-icon"><i class="fas fa-user-md"></i></div><div class="stat-number" data-count="50" data-suffix="+">0</div><div class="stat-label">Medical Professionals</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Accreditations -->
+    <section class="section">
+        <div class="container">
+            <div class="text-center mb-2">
+                <h2>Accreditations & Awards</h2>
+                <p>Recognition of our commitment to excellence in diagnostics.</p>
+            </div>
+            <div class="accreditations-grid">
+                <div class="accreditation-card fade-in"><div class="acc-icon"><i class="fas fa-certificate"></i></div><h4>NABL Accredited</h4><p>Certificate No: [NABL_CERT_NO]</p><a href="#">View Certificate →</a></div>
+                <div class="accreditation-card fade-in"><div class="acc-icon"><i class="fas fa-shield-alt"></i></div><h4>ISO 9001:2015</h4><p>Quality management certification</p><a href="#">View Certificate →</a></div>
+                <div class="accreditation-card fade-in"><div class="acc-icon"><i class="fas fa-hospital"></i></div><h4>State Medical Board</h4><p>Registered with [STATE] Medical Council</p><a href="#">View Certificate →</a></div>
+                <div class="accreditation-card fade-in"><div class="acc-icon"><i class="fas fa-trophy"></i></div><h4>Quality Excellence</h4><p>Recognized for outstanding service</p><a href="#">View Details →</a></div>
+            </div>
+        </div>
+    </section>
+
+    </main>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <h3 style="display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-heartbeat"></i> Uniscans & Labs
-                    </h3>
-                    <p>Providing accurate, accessible, and affordable diagnostic solutions. Trusted by thousands of patients and doctors across the city.</p>
-                </div>
-                
-                <div>
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="appointment.html">Book Appointment</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="services.html">MRI & CT Scan</a></li>
-                        <li><a href="services.html">Ultrasound</a></li>
-                        <li><a href="services.html">Pathology</a></li>
-                        <li><a href="services.html">X-Ray</a></li>
-                        <li><a href="services.html">Health Packages</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt" style="width: 20px;"></i> 123 Health Avenue, Medical District, Cityville 40001</li>
-                        <li><i class="fas fa-phone" style="width: 20px;"></i> +1 (800) 123-4567</li>
-                        <li><i class="fas fa-envelope" style="width: 20px;"></i> info@uniscanslabs.com</li>
-                        <li><i class="fas fa-clock" style="width: 20px;"></i> Mon-Sun: 7:00 AM - 9:00 PM</li>
-                    </ul>
-                </div>
+                <div><h3 style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-heartbeat"></i> Uniscans & Labs</h3><p class="footer-about-text">Providing accurate, accessible, and affordable diagnostic solutions since [YEAR].</p><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div>
+                <div><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li><li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li><li><a href="faq.html"><i class="fas fa-chevron-right"></i> FAQs</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
+                <div><h3>Our Services</h3><ul class="footer-links"><li><a href="services.html"><i class="fas fa-chevron-right"></i> MRI & CT Scan</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Pathology</a></li><li><a href="packages.html"><i class="fas fa-chevron-right"></i> Health Packages</a></li></ul></div>
+                <div><h3>Contact Info</h3><ul class="footer-links"><li><i class="fas fa-map-marker-alt" style="width: 18px; color: var(--teal);"></i> [ADDRESS], [CITY]</li><li><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone" style="width: 18px; color: var(--teal);"></i> +91 XXXXX-XXXXX</a></li><li><a href="mailto:info@[DOMAIN]"><i class="fas fa-envelope" style="width: 18px; color: var(--teal);"></i> info@[DOMAIN]</a></li></ul></div>
+                <div><h3>Important</h3><ul class="footer-links"><li><a href="privacy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li><li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms</a></li><li><a href="refund.html"><i class="fas fa-chevron-right"></i> Refund Policy</a></li></ul></div>
+                <div><h3>For Patients</h3><ul class="footer-links"><li><a href="reports.html"><i class="fas fa-chevron-right"></i> Download Reports</a></li><li><a href="test-catalog.html"><i class="fas fa-chevron-right"></i> Test Catalog</a></li></ul></div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Uniscans & Labs. All Rights Reserved. Designed for Health.</p>
-            </div>
+            <div class="footer-bottom"><div class="footer-bottom-inner"><p>&copy; 2026 Uniscans & Labs. All Rights Reserved.</p><div class="payment-methods"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fab fa-google-pay"></i></div><div class="ssl-badge"><i class="fas fa-lock"></i> SSL Secured</div></div></div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp -->
-    <a href="#" class="whatsapp-float" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20test." class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="tooltip">Chat with us</span></a>
+    <button class="back-to-top" id="backToTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <div class="cookie-banner" id="cookieBanner"><p>We use cookies to improve your experience. <a href="privacy.html">Learn More</a></p><div class="cookie-buttons"><button class="btn cookie-btn-decline" id="cookieDecline">Decline</button><button class="btn btn-accent" id="cookieAccept">Accept</button></div></div>
+    <div class="mobile-bottom-cta"><a href="tel:+91XXXXXXXXXX" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a><a href="appointment.html" class="btn btn-accent"><i class="fas fa-calendar-check"></i> Book Test</a></div>
 
     <script src="script.js"></script>
 </body>

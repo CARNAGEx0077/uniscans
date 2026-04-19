@@ -3,142 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQs | Uniscans & Labs</title>
-    <meta name="description" content="Frequently Asked Questions about Uniscans & Labs diagnostic services.">
+    <title>FAQs - Frequently Asked Questions | Uniscans & Labs</title>
+    <meta name="description" content="Find answers to common questions about diagnostic tests, booking, reports, pricing, home collection, and more at Uniscans & Labs.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <!-- Sticky Navbar -->
-    <header class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span>
-            </a>
-            
-            <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="services.html">Services</a>
-                <a href="about.html">About Us</a>
-                <a href="faq.html" class="active">FAQs</a>
-                <a href="contact.html">Contact</a>
-                <a href="appointment.html" class="btn btn-accent">Book Appointment</a>
-            </nav>
-            
-            <div class="mobile-toggle">
-                <i class="fas fa-bars"></i>
-            </div>
-        </div>
-    </header>
+    <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
+    <div class="promo-banner" id="promoBanner">🎉 Limited Time: Master Health Checkup @ ₹2,999 (Save ₹1,000) | <a href="packages.html">Book Now →</a><button class="promo-close" id="promoClose" aria-label="Close">×</button></div>
+    <div class="top-bar"><div class="container"><div class="top-bar-left"><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone-alt"></i> +91 XXXXX-XXXXX</a><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a><span class="location-badge"><i class="fas fa-map-marker-alt"></i> Now in [CITY_NAME]</span></div><div class="top-bar-right"><a href="reports.html">View Reports</a><span class="top-bar-divider">|</span><a href="reports.html">Track Test</a></div></div></div>
+    <header class="navbar" id="navbar"><div class="container"><a href="index.html" class="logo"><i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span></a><nav class="nav-links" id="navLinks"><a href="index.html">Home</a><div class="nav-dropdown"><a href="services.html">Services <i class="fas fa-chevron-down"></i></a><div class="dropdown-menu"><a href="services.html"><i class="fas fa-stethoscope"></i> All Services</a><a href="packages.html"><i class="fas fa-box-open"></i> Health Packages</a><a href="test-catalog.html"><i class="fas fa-list-alt"></i> Test Catalog</a><a href="preparation.html"><i class="fas fa-clipboard-list"></i> Preparation Guides</a></div></div><a href="about.html">About Us</a><a href="faq.html" class="active">FAQs</a><a href="contact.html">Contact</a><a href="appointment.html" class="btn btn-accent">Book Appointment</a></nav><div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div></div></header>
+    <div class="mobile-overlay" id="mobileOverlay"></div>
+    <div class="trust-bar"><div class="trust-bar-inner"><div class="trust-bar-item"><i class="fas fa-certificate"></i> NABL Certified</div><div class="trust-bar-item"><i class="fas fa-shield-alt"></i> ISO 9001:2015</div><div class="trust-bar-item"><i class="fas fa-users"></i> 10,000+ Happy Patients</div><div class="trust-bar-item"><i class="fas fa-clock"></i> 24hr Reports</div><div class="trust-bar-item"><i class="fas fa-home"></i> Free Home Collection</div></div></div>
+    <div class="breadcrumb" style="padding-top: 1rem; background: var(--section-alt);"><div class="container"><ul class="breadcrumb-list"><li><a href="index.html">Home</a></li><li><span class="separator"><i class="fas fa-chevron-right"></i></span></li><li class="active">FAQs</li></ul></div></div>
 
-    <!-- Page Header -->
-    <section class="section section-alt" style="padding-top: 10rem; padding-bottom: 4rem;">
+    <main id="main-content">
+
+    <section class="section section-alt" style="padding-top: 2rem; padding-bottom: 3rem;">
         <div class="container text-center">
             <h1>Frequently Asked Questions</h1>
-            <p>Got questions? We've got answers regarding tests, timings, and procedures.</p>
+            <p style="font-size: 1.1rem;">Got questions? We've got answers about tests, booking, reports, and more.</p>
         </div>
     </section>
 
-    <!-- FAQs Content -->
     <section class="section" id="faq">
         <div class="container">
-            <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>How quickly will I get my blood test results?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Most standard blood tests and routine profiles are delivered within 12-24 hours via email and SMS. Specialized tests might take 48-72 hours depending on the complexity of the culture.</p>
-                    </div>
+            <div class="faq-container" style="max-width: 900px;">
+
+                <!-- Search -->
+                <div class="faq-search">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search FAQs... (e.g., 'MRI preparation', 'home collection')">
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do I need to book an appointment for an X-ray?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Walk-ins are welcome for general X-rays and routine blood tests. However, for specialized imaging like MRI, CT Scans, or detailed ultrasounds, a prior appointment is highly recommended to avoid wait times.</p>
-                    </div>
+
+                <!-- Category Tabs -->
+                <div class="faq-tabs">
+                    <button class="faq-tab active" data-category="all">All</button>
+                    <button class="faq-tab" data-category="booking">Booking</button>
+                    <button class="faq-tab" data-category="home">Home Collection</button>
+                    <button class="faq-tab" data-category="tests">Tests & Procedures</button>
+                    <button class="faq-tab" data-category="reports">Reports</button>
+                    <button class="faq-tab" data-category="payment">Payment</button>
+                    <button class="faq-tab" data-category="safety">Safety</button>
+                    <button class="faq-tab" data-category="general">General</button>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Do you offer home sample collection?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Yes, we offer free home sample collection for tests billing over a certain amount within a 15km radius of our diagnostic center. Our trained phlebotomists follow strict hygiene protocols.</p>
-                    </div>
+
+                <!-- BOOKING FAQs -->
+                <div class="faq-item" data-category="booking">
+                    <div class="faq-question"><span>How do I book an appointment?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>You can book through: <strong>Call/WhatsApp:</strong> +91 XXXXX-XXXXX | <strong>Website:</strong> Click "Book Appointment" | <strong>Walk-in:</strong> Visit any center. We recommend booking online for priority slots.</p></div>
                 </div>
-                <div class="faq-item">
-                    <div class="faq-question">
-                        <span>Is Uniscans & Labs NABL accredited?</span>
-                        <i class="fas fa-chevron-down faq-icon"></i>
-                    </div>
-                    <div class="faq-answer">
-                        <p>Absolutely. We are fully NABL accredited and ISO certified, which ensures that our lab protocols, equipment calibration, and final reports meet the highest international medical standards.</p>
-                    </div>
+                <div class="faq-item" data-category="booking">
+                    <div class="faq-question"><span>Can I book for the same day?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes, same-day appointments are available based on slot availability. Call +91 XXXXX-XXXXX for immediate confirmation. Blood tests are usually available same day; MRI/CT may need advance booking.</p></div>
+                </div>
+                <div class="faq-item" data-category="booking">
+                    <div class="faq-question"><span>What are your operating hours?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Monday-Sunday: 7:00 AM - 9:00 PM at all centers. 24/7 emergency services available at our main center in [CITY]. Home collection: 7 AM - 11 AM (morning) and 4 PM - 7 PM (evening).</p></div>
+                </div>
+                <div class="faq-item" data-category="booking">
+                    <div class="faq-question"><span>Do I need a doctor's prescription?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Prescription is <strong>recommended</strong> for radiology tests (MRI, CT Scan). Not mandatory for routine blood tests like CBC, Sugar, Lipid Profile. Our doctors can guide you if unsure.</p></div>
+                </div>
+                <div class="faq-item" data-category="booking">
+                    <div class="faq-question"><span>Can I reschedule or cancel my appointment?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! Call us at least 4 hours before your appointment. <strong>No cancellation charges</strong> for rescheduling. Cancel 24hrs before: Free. 12-24hrs: 25% charges. Less than 12hrs: 50% charges.</p></div>
+                </div>
+                <div class="faq-item" data-category="booking">
+                    <div class="faq-question"><span>Do you accept walk-ins?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes, walk-ins are welcome! However, appointment holders get priority. Walk-ins may have some waiting time, especially for radiology services. Blood tests are usually immediate.</p></div>
+                </div>
+                <div class="faq-item" data-category="booking">
+                    <div class="faq-question"><span>Can I book for family members?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Absolutely! You can book for multiple family members in one appointment. Just provide each person's name, age, and test details during booking.</p></div>
+                </div>
+                <div class="faq-item" data-category="booking">
+                    <div class="faq-question"><span>How do I know my appointment is confirmed?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>You'll receive an <strong>SMS and email confirmation</strong> with your appointment date, time, center address, preparation instructions, and booking reference number within minutes.</p></div>
+                </div>
+
+                <!-- HOME COLLECTION FAQs -->
+                <div class="faq-item" data-category="home">
+                    <div class="faq-question"><span>Do you provide home sample collection?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! <strong>Free home collection</strong> for orders above ₹[AMOUNT]. Below that threshold, a nominal charge of ₹[CHARGE] applies. Available across all areas within [CITY] limits.</p></div>
+                </div>
+                <div class="faq-item" data-category="home">
+                    <div class="faq-question"><span>What are home collection timings?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>Morning slots:</strong> 7:00 AM - 11:00 AM (preferred for fasting tests). <strong>Evening slots:</strong> 4:00 PM - 7:00 PM. Book at least 1 day in advance for preferred timing.</p></div>
+                </div>
+                <div class="faq-item" data-category="home">
+                    <div class="faq-question"><span>Which areas do you cover for home collection?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>We cover all areas within [CITY] limits and surrounding suburbs. Call +91 XXXXX-XXXXX to confirm availability for your specific location. We're expanding coverage regularly.</p></div>
+                </div>
+                <div class="faq-item" data-category="home">
+                    <div class="faq-question"><span>Is home collection safe and hygienic?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Absolutely. Our trained phlebotomists use <strong>sterile, single-use equipment</strong> opened in front of you. All disposables are discarded safely per biomedical waste guidelines. Full PPE protocols followed.</p></div>
+                </div>
+                <div class="faq-item" data-category="home">
+                    <div class="faq-question"><span>Can you collect samples from bedridden patients?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes, our phlebotomists are specially trained for <strong>bedridden and elderly patient</strong> sample collection. They carry all necessary equipment and ensure a comfortable, stress-free experience.</p></div>
+                </div>
+                <div class="faq-item" data-category="home">
+                    <div class="faq-question"><span>How do I book home collection?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Book online through our website, call +91 XXXXX-XXXXX, or WhatsApp us. Provide your address, preferred time slot, and test details. You'll receive confirmation within 30 minutes.</p></div>
+                </div>
+
+                <!-- TESTS & PROCEDURES FAQs -->
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>What tests do you offer?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Complete range: <strong>Radiology</strong> (MRI, CT, X-Ray, Ultrasound), <strong>Pathology</strong> (Blood, Urine, Hormones, Vitamins), <strong>Cardiology</strong> (ECG, Echo, TMT), and <strong>Health Packages</strong> (30+ to 100+ test panels).</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>How long does an MRI scan take?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Typically <strong>20-45 minutes</strong> depending on body part. Brain: 20-30 min | Spine: 30-40 min | Joints: 20-30 min | Full Body: 60+ min. You must stay still during the scan.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>Is MRI painful?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>No, MRI is completely painless.</strong> You'll hear some noise during the scan (we provide earplugs/headphones). No needles unless contrast dye is needed. You just need to lie still.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>What should I wear for MRI/CT?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Wear comfortable clothing <strong>without metal</strong> (no zippers, buttons, underwired bras). We provide a hospital gown if needed. Remove all jewelry, watches, mobile phones, and accessories before entering.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>Are MRI and CT scans safe?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>MRI:</strong> Uses magnetic fields — no ionizing radiation, very safe. <strong>CT:</strong> Uses controlled radiation — safe when medically necessary. Benefits always outweigh minimal risks.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>Can pregnant women take scans?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>Always inform us about pregnancy.</strong> Ultrasound: Safe throughout pregnancy. MRI: Generally safe after first trimester (with doctor's advice). CT/X-Ray: Generally avoided unless absolutely necessary.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>How do I prepare for blood tests?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Most fasting tests need <strong>8-12 hours fasting</strong> (only plain water allowed). Non-fasting tests like CBC, Thyroid don't need preparation. We'll provide specific instructions when you book.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>Can I take my medicines before tests?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Usually yes with a sip of water, but <strong>inform us about all medications</strong> during booking. Some medicines (blood thinners, steroids, thyroid medication) may affect specific test results.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>What if I'm claustrophobic (afraid of closed spaces)?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>Inform us beforehand.</strong> Our MRI has a wide bore design (less enclosed feeling). We provide music/headphones. Mild sedation is available if needed (with doctor's prescription). Our staff will guide you throughout.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>How much blood is drawn for tests?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Typically <strong>2-5 ml per test</strong>. Even for comprehensive packages with 50+ tests, total blood drawn rarely exceeds 15-20 ml — that's about 3-4 teaspoons. Completely safe for adults.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>Can diabetic patients undergo fasting tests?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! <strong>Book a morning slot (7-8 AM).</strong> Come early, get tested first, then have breakfast immediately. Always carry glucose tablets/snack. Inform our staff about your condition. They'll prioritize your sample.</p></div>
+                </div>
+                <div class="faq-item" data-category="tests">
+                    <div class="faq-question"><span>Do you perform tests on children?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! We have <strong>specially trained pediatric phlebotomists</strong> who are experienced with children. We use smaller butterfly needles and create a child-friendly, comfortable environment.</p></div>
+                </div>
+
+                <!-- REPORTS FAQs -->
+                <div class="faq-item" data-category="reports">
+                    <div class="faq-question"><span>When will I get my report?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>Routine tests:</strong> 12-24 hours | <strong>Specialized tests (cultures):</strong> 48-72 hours | <strong>Critical reports:</strong> Same day (4-6 hours) | <strong>Radiology:</strong> 24 hours. All reports sent via email + SMS.</p></div>
+                </div>
+                <div class="faq-item" data-category="reports">
+                    <div class="faq-question"><span>How will I receive my report?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Digital report via <strong>email + SMS link</strong>. You can also download from our patient portal (reports.uniscanslabs.com) anytime 24/7. Hard copy available on request at any center.</p></div>
+                </div>
+                <div class="faq-item" data-category="reports">
+                    <div class="faq-question"><span>Can I access my old reports?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! Login to our <a href="reports.html" style="color: var(--teal);">patient portal</a> with your registered mobile number. All past reports are stored digitally for [X years] and available for download anytime.</p></div>
+                </div>
+                <div class="faq-item" data-category="reports">
+                    <div class="faq-question"><span>Can I get my report explained by a doctor?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>Yes — free consultation!</strong> Our pathologists and radiologists are available to explain your report in simple language. Book a report consultation call by calling +91 XXXXX-XXXXX.</p></div>
+                </div>
+                <div class="faq-item" data-category="reports">
+                    <div class="faq-question"><span>Is my report confidential?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>Absolutely.</strong> Reports are sent only to your registered mobile number and email. Portal access is OTP-secured. We comply with all medical data privacy regulations.</p></div>
+                </div>
+                <div class="faq-item" data-category="reports">
+                    <div class="faq-question"><span>What if I don't receive my report on time?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Call +91 XXXXX-XXXXX or WhatsApp us with your booking ID. We'll check the status immediately and send it to you. Delays are rare but can happen with specialized tests.</p></div>
+                </div>
+                <div class="faq-item" data-category="reports">
+                    <div class="faq-question"><span>What do I do with abnormal results?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Don't panic! Slightly out-of-range values are common and may not indicate disease. <strong>Consult your doctor</strong> or book a free consultation with our doctors for guidance on next steps.</p></div>
+                </div>
+                <div class="faq-item" data-category="reports">
+                    <div class="faq-question"><span>Can I share my report with my doctor?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! Easily share via email or WhatsApp directly from our portal. Reports are in print-friendly PDF format. You can also generate a shareable link for your doctor.</p></div>
+                </div>
+
+                <!-- PAYMENT FAQs -->
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question"><span>What are your payment options?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>We accept: <strong>Cash</strong> | <strong>Credit/Debit Cards</strong> (Visa, Mastercard, RuPay) | <strong>UPI</strong> (GPay, PhonePe, Paytm) | <strong>Net Banking</strong> | <strong>Digital Wallets</strong>. Online payment available during booking too.</p></div>
+                </div>
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question"><span>Do you accept insurance?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes, we work with major insurance providers. <strong>Cashless facility</strong> available for selected plans. For reimbursement claims, we provide detailed receipts with test codes. Contact us to verify your specific plan.</p></div>
+                </div>
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question"><span>Are there any hidden charges?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>No hidden charges whatsoever.</strong> The price shown on our website and quoted during booking is the final price. Home collection charges (if applicable) are mentioned upfront.</p></div>
+                </div>
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question"><span>Do you offer discounts?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! <strong>Health packages</strong> save 20-40% vs individual tests. We also offer: Senior citizen discounts | Student discounts | Corporate tie-up rates | Seasonal promotional offers. Check our <a href="packages.html" style="color: var(--teal);">packages page</a>.</p></div>
+                </div>
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question"><span>What is your refund policy?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>If test not conducted:</strong> Full refund within 7-10 business days. <strong>If sample already collected:</strong> No refund (reschedule allowed). Refund processed to original payment method. See our <a href="refund.html" style="color: var(--teal);">detailed refund policy</a>.</p></div>
+                </div>
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question"><span>Are health packages worth it?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>Absolutely!</strong> Packages save 20-40% compared to individual test prices. Our Master Health Checkup (₹2,999 for 60+ tests) would cost ₹5,000+ if booked individually. Plus, you get free consultation and home collection.</p></div>
+                </div>
+                <div class="faq-item" data-category="payment">
+                    <div class="faq-question"><span>Can I get an estimate before tests?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! Call us with your test names or send your prescription via WhatsApp. We'll provide an <strong>exact cost estimate within minutes</strong>. No obligation to book.</p></div>
+                </div>
+
+                <!-- SAFETY FAQs -->
+                <div class="faq-item" data-category="safety">
+                    <div class="faq-question"><span>What safety measures do you follow?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Sterile collection techniques | <strong>Single-use disposable needles/syringes</strong> (opened in front of you) | Gloves changed per patient | Regular sanitization | Biomedical waste management per government norms.</p></div>
+                </div>
+                <div class="faq-item" data-category="safety">
+                    <div class="faq-question"><span>Are your laboratories safe?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes. Our labs are <strong>NABL certified</strong> with regular inspections, internal quality control checks, external proficiency testing, and documented SOPs. We maintain the highest safety and hygiene standards.</p></div>
+                </div>
+                <div class="faq-item" data-category="safety">
+                    <div class="faq-question"><span>Is radiation from CT scan dangerous?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Our 128-slice CT scanner uses <strong>controlled, low-dose radiation</strong> — safe when medically necessary. Benefits of accurate diagnosis far outweigh the minimal radiation risk. Not recommended repeatedly without medical need.</p></div>
+                </div>
+                <div class="faq-item" data-category="safety">
+                    <div class="faq-question"><span>Can I see the needle before sample collection?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! We open the <strong>sealed needle pack in front of you</strong>. Every needle is single-use and disposed of immediately after in a puncture-proof container. This is standard practice at Uniscans.</p></div>
+                </div>
+                <div class="faq-item" data-category="safety">
+                    <div class="faq-question"><span>Are samples ever mixed up?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p><strong>No.</strong> We use a strict <strong>barcode system</strong>. Each sample is labeled with a unique barcode at the time of collection with your name and ID. Multiple verification points exist throughout the testing process.</p></div>
+                </div>
+                <div class="faq-item" data-category="safety">
+                    <div class="faq-question"><span>How do you maintain equipment?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Regular calibration schedules | Preventive maintenance contracts with manufacturers | Daily quality control checks | Documented maintenance logs | Annual audits by NABL assessors.</p></div>
+                </div>
+
+                <!-- GENERAL FAQs -->
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question"><span>Where are you located?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>[X] centers across [CITY/REGION]. Main center: [FULL_ADDRESS]. View all locations on our <a href="contact.html" style="color: var(--teal);">Contact page</a> with Google Maps directions.</p></div>
+                </div>
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question"><span>Do you have parking facility?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes, <strong>free parking</strong> available at all our centers. Some city-center locations may have nearby paid parking — we'll inform you during booking confirmation.</p></div>
+                </div>
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question"><span>Are your centers wheelchair accessible?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes, all centers have <strong>ramps and wheelchair access</strong>. Ground floor centers are available for patients with mobility challenges. Our staff will assist with any accessibility needs.</p></div>
+                </div>
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question"><span>Do you work with hospitals?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes, we're partnered with <strong>[XX] hospitals and clinics</strong>. Referring doctors can directly order tests, and reports can be shared electronically to their systems.</p></div>
+                </div>
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question"><span>How can I give feedback?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Email: feedback@[DOMAIN] | Call: +91 XXXXX-XXXXX | <a href="https://g.page/[GOOGLE_PROFILE]/review" target="_blank" rel="noopener" style="color: var(--teal);">Google Reviews</a> | Feedback form on our <a href="contact.html" style="color: var(--teal);">Contact page</a>. We respond to all feedback within 24 hours.</p></div>
+                </div>
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question"><span>Do you conduct health camps?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Yes! We conduct <strong>corporate health camps, community camps, and awareness programs</strong>. Contact our corporate team at +91 XXXXX-XXXXX or corporate@[DOMAIN] for details and pricing.</p></div>
+                </div>
+                <div class="faq-item" data-category="general">
+                    <div class="faq-question"><span>How do I become your corporate partner?</span><i class="fas fa-chevron-down faq-icon"></i></div>
+                    <div class="faq-answer"><p>Email corporate@[DOMAIN] or call +91 XXXXX-XXXXX. We offer <strong>customized packages</strong> for companies including employee checkups, pre-employment screening, annual health packages, and on-site camps.</p></div>
+                </div>
+
+                <!-- No Results -->
+                <div class="faq-no-results">
+                    <i class="fas fa-search" style="font-size: 2rem; color: var(--text-muted); margin-bottom: 1rem;"></i>
+                    <p>No FAQs found matching your search. Try different keywords or browse by category above.</p>
+                </div>
+
+            </div>
+
+            <!-- Still Have Questions -->
+            <div class="still-questions">
+                <h3>Still Have Questions?</h3>
+                <p>Can't find your answer? Our team is here to help you 7 days a week.</p>
+                <div class="still-questions-buttons">
+                    <a href="tel:+91XXXXXXXXXX" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Us Now</a>
+                    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20have%20a%20question." target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+                    <a href="contact.html" class="btn btn-outline"><i class="fas fa-envelope"></i> Submit Your Question</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    </main>
+
+    <!-- Footer (same as other pages) -->
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div>
-                    <h3 style="display: flex; align-items: center; gap: 0.5rem;">
-                        <i class="fas fa-heartbeat"></i> Uniscans & Labs
-                    </h3>
-                    <p>Providing accurate, accessible, and affordable diagnostic solutions. Trusted by thousands of patients and doctors across the city.</p>
-                </div>
-                
-                <div>
-                    <h3>Quick Links</h3>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="services.html">Services</a></li>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="faq.html">FAQs</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="appointment.html">Book Appointment</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3>Our Services</h3>
-                    <ul class="footer-links">
-                        <li><a href="services.html">MRI & CT Scan</a></li>
-                        <li><a href="services.html">Ultrasound</a></li>
-                        <li><a href="services.html">Pathology</a></li>
-                        <li><a href="services.html">X-Ray</a></li>
-                        <li><a href="services.html">Health Packages</a></li>
-                    </ul>
-                </div>
-                
-                <div>
-                    <h3>Contact Info</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt" style="width: 20px;"></i> 123 Health Avenue, Medical District, Cityville 40001</li>
-                        <li><i class="fas fa-phone" style="width: 20px;"></i> +1 (800) 123-4567</li>
-                        <li><i class="fas fa-envelope" style="width: 20px;"></i> info@uniscanslabs.com</li>
-                        <li><i class="fas fa-clock" style="width: 20px;"></i> Mon-Sun: 7:00 AM - 9:00 PM</li>
-                    </ul>
-                </div>
+                <div><h3 style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-heartbeat"></i> Uniscans & Labs</h3><p class="footer-about-text">Accurate, accessible, and affordable diagnostic solutions.</p><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a><a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></div></div>
+                <div><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li><li><a href="about.html"><i class="fas fa-chevron-right"></i> About Us</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
+                <div><h3>Our Services</h3><ul class="footer-links"><li><a href="services.html"><i class="fas fa-chevron-right"></i> MRI & CT Scan</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Pathology</a></li><li><a href="packages.html"><i class="fas fa-chevron-right"></i> Health Packages</a></li></ul></div>
+                <div><h3>Contact Info</h3><ul class="footer-links"><li><i class="fas fa-map-marker-alt" style="width: 18px; color: var(--teal);"></i> [ADDRESS], [CITY]</li><li><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone" style="width: 18px; color: var(--teal);"></i> +91 XXXXX-XXXXX</a></li><li><a href="mailto:info@[DOMAIN]"><i class="fas fa-envelope" style="width: 18px; color: var(--teal);"></i> info@[DOMAIN]</a></li></ul></div>
+                <div><h3>Important</h3><ul class="footer-links"><li><a href="privacy.html"><i class="fas fa-chevron-right"></i> Privacy Policy</a></li><li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms</a></li><li><a href="refund.html"><i class="fas fa-chevron-right"></i> Refund Policy</a></li></ul></div>
+                <div><h3>For Patients</h3><ul class="footer-links"><li><a href="reports.html"><i class="fas fa-chevron-right"></i> Download Reports</a></li><li><a href="test-catalog.html"><i class="fas fa-chevron-right"></i> Test Catalog</a></li></ul></div>
             </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2026 Uniscans & Labs. All Rights Reserved. Designed for Health.</p>
-            </div>
+            <div class="footer-bottom"><div class="footer-bottom-inner"><p>&copy; 2026 Uniscans & Labs. All Rights Reserved.</p><div class="payment-methods"><i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i><i class="fab fa-google-pay"></i></div><div class="ssl-badge"><i class="fas fa-lock"></i> SSL Secured</div></div></div>
         </div>
     </footer>
 
-    <!-- Floating WhatsApp -->
-    <a href="#" class="whatsapp-float" aria-label="Chat on WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-    </a>
+    <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20a%20test." class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="tooltip">Chat with us</span></a>
+    <button class="back-to-top" id="backToTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
+    <div class="cookie-banner" id="cookieBanner"><p>We use cookies to improve your experience. <a href="privacy.html">Learn More</a></p><div class="cookie-buttons"><button class="btn cookie-btn-decline" id="cookieDecline">Decline</button><button class="btn btn-accent" id="cookieAccept">Accept</button></div></div>
+    <div class="mobile-bottom-cta"><a href="tel:+91XXXXXXXXXX" class="btn btn-primary"><i class="fas fa-phone-alt"></i> Call Now</a><a href="appointment.html" class="btn btn-accent"><i class="fas fa-calendar-check"></i> Book Test</a></div>
 
     <script src="script.js"></script>
 </body>
