@@ -73,8 +73,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // ============================================
-    // 4. PROMO BANNER DISMISS
+    
     // ============================================
     const promoBanner = document.getElementById('promoBanner');
     const promoClose = document.getElementById('promoClose');
@@ -91,8 +90,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
-    // 5. COOKIE CONSENT
+    
     // ============================================
     const cookieBanner = document.getElementById('cookieBanner');
     const cookieAccept = document.getElementById('cookieAccept');
@@ -396,8 +394,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // ============================================
-    // 14. SOCIAL PROOF POPUPS
+    
     // ============================================
     const socialProof = document.getElementById('socialProof');
     const spText = document.getElementById('spText');
@@ -576,9 +573,9 @@ document.addEventListener('DOMContentLoaded', () => {
         lazyImages.forEach(img => imageObserver.observe(img));
     }
 
+    
     // ============================================
-    // 18. MULTI-STEP BOOKING FORM
-    // ============================================
+// ============================================
     const bookingSteps = document.querySelectorAll('.booking-step');
     const progressDots = document.querySelectorAll('.progress-step-dot');
     const progressLines = document.querySelectorAll('.progress-line');
@@ -771,3 +768,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
 });
+
+    // ============================================
+    // WHATSAPP INQUIRY FORM
+    // ============================================
+    const waForm = document.getElementById('inquiryWhatsAppForm');
+    if (waForm) {
+        waForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('inqName').value.trim();
+            const phone = document.getElementById('inqPhone').value.trim();
+            const email = document.getElementById('inqEmail').value.trim();
+            const date = document.getElementById('inqDate').value;
+            const message = document.getElementById('inqMessage').value.trim();
+            
+            if(!name || !phone || !date || !message) {
+                alert("Please fill in all required fields.");
+                return;
+            }
+
+            const text = `Hi, I would like to book an appointment.
+*Name*: ${name}
+*Phone*: ${phone}
+*Email*: ${email ? email : 'N/A'}
+*Date*: ${date}
+*Message*: ${message}`;
+            
+            const encodedText = encodeURIComponent(text);
+            const targetPhone = "91XXXXXXXXXX"; // Placeholder
+            
+            const url = `https://wa.me/${targetPhone}?text=${encodedText}`;
+            window.open(url, '_blank');
+        });
+    }
+
