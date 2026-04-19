@@ -30,340 +30,33 @@
         <div class="container">
 
             <!-- Progress Bar -->
-            <div class="booking-progress">
-                <div class="progress-step">
-                    <div class="progress-step-dot active"><span>1</span><span class="progress-step-label">Service</span></div>
-                </div>
-                <div class="progress-line"></div>
-                <div class="progress-step">
-                    <div class="progress-step-dot"><span>2</span><span class="progress-step-label">Test</span></div>
-                </div>
-                <div class="progress-line"></div>
-                <div class="progress-step">
-                    <div class="progress-step-dot"><span>3</span><span class="progress-step-label">Details</span></div>
-                </div>
-                <div class="progress-line"></div>
-                <div class="progress-step">
-                    <div class="progress-step-dot"><span>4</span><span class="progress-step-label">Collection</span></div>
-                </div>
-                <div class="progress-line"></div>
-                <div class="progress-step">
-                    <div class="progress-step-dot"><span>5</span><span class="progress-step-label">Schedule</span></div>
-                </div>
-                <div class="progress-line"></div>
-                <div class="progress-step">
-                    <div class="progress-step-dot"><span>6</span><span class="progress-step-label">Review</span></div>
-                </div>
-            </div>
-
-            <!-- Step 1: Select Service Type -->
-            <div class="booking-step active" id="step1">
-                <div class="form-container" style="max-width: 700px;">
-                    <h2 style="text-align: center; margin-bottom: 0.5rem;">Select Service Type</h2>
-                    <p class="text-center" style="margin-bottom: 2rem;">Choose the category of diagnostic service you need.</p>
-
+            
+            <div class="form-container" style="max-width: 600px; margin: 0 auto; background: white; padding: 2rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+                <form id="inquiryWhatsAppForm">
                     <div class="form-group">
-                        <div style="display: grid; gap: 0.75rem;">
-                            <div class="service-option-card">
-                                <input type="radio" name="serviceType" value="pathology" id="svcPath">
-                                <label for="svcPath" style="cursor: pointer; flex: 1;">
-                                    <strong style="display: block;"><i class="fas fa-vials" style="color: var(--teal); margin-right: 0.5rem;"></i> Pathology (Blood Tests)</strong>
-                                    <small style="color: var(--text-muted);">CBC, Lipid, Thyroid, Sugar, LFT, KFT, Vitamins & more</small>
-                                </label>
-                            </div>
-                            <div class="service-option-card">
-                                <input type="radio" name="serviceType" value="radiology" id="svcRad">
-                                <label for="svcRad" style="cursor: pointer; flex: 1;">
-                                    <strong style="display: block;"><i class="fas fa-x-ray" style="color: var(--teal); margin-right: 0.5rem;"></i> Radiology (Imaging)</strong>
-                                    <small style="color: var(--text-muted);">MRI, CT Scan, Ultrasound, X-Ray</small>
-                                </label>
-                            </div>
-                            <div class="service-option-card">
-                                <input type="radio" name="serviceType" value="cardiology" id="svcCard">
-                                <label for="svcCard" style="cursor: pointer; flex: 1;">
-                                    <strong style="display: block;"><i class="fas fa-heartbeat" style="color: var(--teal); margin-right: 0.5rem;"></i> Cardiology</strong>
-                                    <small style="color: var(--text-muted);">ECG, 2D Echo, TMT, Holter Monitoring</small>
-                                </label>
-                            </div>
-                            <div class="service-option-card">
-                                <input type="radio" name="serviceType" value="package" id="svcPkg">
-                                <label for="svcPkg" style="cursor: pointer; flex: 1;">
-                                    <strong style="display: block;"><i class="fas fa-box-open" style="color: var(--accent-orange); margin-right: 0.5rem;"></i> Health Package</strong>
-                                    <small style="color: var(--text-muted);">Master, Executive, Diabetes, Women's, Senior packages</small>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="booking-nav">
-                        <div></div>
-                        <button class="btn btn-accent booking-next">Next: Select Test →</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 2: Select Specific Test -->
-            <div class="booking-step" id="step2">
-                <div class="form-container" style="max-width: 700px;">
-                    <h2 style="text-align: center; margin-bottom: 0.5rem;">Select Your Test</h2>
-                    <p class="text-center" style="margin-bottom: 2rem;">Choose one or more tests. Prices are indicative.</p>
-
-                    <div class="form-group">
-                        <label>Popular Tests</label>
-                        <div style="display: grid; gap: 0.5rem;">
-                            <div class="service-option-card"><input type="checkbox" id="test1"><label for="test1" style="cursor: pointer; flex: 1; display: flex; justify-content: space-between;"><span>Complete Blood Count (CBC)</span><strong style="color: var(--teal);">₹[PRICE]</strong></label></div>
-                            <div class="service-option-card"><input type="checkbox" id="test2"><label for="test2" style="cursor: pointer; flex: 1; display: flex; justify-content: space-between;"><span>Lipid Profile</span><strong style="color: var(--teal);">₹[PRICE]</strong></label></div>
-                            <div class="service-option-card"><input type="checkbox" id="test3"><label for="test3" style="cursor: pointer; flex: 1; display: flex; justify-content: space-between;"><span>Thyroid Profile (T3, T4, TSH)</span><strong style="color: var(--teal);">₹[PRICE]</strong></label></div>
-                            <div class="service-option-card"><input type="checkbox" id="test4"><label for="test4" style="cursor: pointer; flex: 1; display: flex; justify-content: space-between;"><span>HbA1c</span><strong style="color: var(--teal);">₹[PRICE]</strong></label></div>
-                            <div class="service-option-card"><input type="checkbox" id="test5"><label for="test5" style="cursor: pointer; flex: 1; display: flex; justify-content: space-between;"><span>Liver Function Test (LFT)</span><strong style="color: var(--teal);">₹[PRICE]</strong></label></div>
-                            <div class="service-option-card"><input type="checkbox" id="test6"><label for="test6" style="cursor: pointer; flex: 1; display: flex; justify-content: space-between;"><span>Kidney Function Test (KFT)</span><strong style="color: var(--teal);">₹[PRICE]</strong></label></div>
-                            <div class="service-option-card"><input type="checkbox" id="test7"><label for="test7" style="cursor: pointer; flex: 1; display: flex; justify-content: space-between;"><span>Vitamin D (25-OH)</span><strong style="color: var(--teal);">₹[PRICE]</strong></label></div>
-                            <div class="service-option-card"><input type="checkbox" id="test8"><label for="test8" style="cursor: pointer; flex: 1; display: flex; justify-content: space-between;"><span>Master Health Checkup (60+ Tests)</span><strong style="color: var(--teal);">₹2,999</strong></label></div>
-                        </div>
-                    </div>
-
-                    <div class="booking-nav">
-                        <button class="btn btn-outline booking-prev">← Back</button>
-                        <button class="btn btn-accent booking-next">Next: Your Details →</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 3: Patient Details -->
-            <div class="booking-step" id="step3">
-                <div class="form-container" style="max-width: 700px;">
-                    <h2 style="text-align: center; margin-bottom: 0.5rem;">Patient Details</h2>
-                    <p class="text-center" style="margin-bottom: 2rem;">Tell us about the patient who will take the test.</p>
-
-                    <form id="bookingForm">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="patientName">Full Name *</label>
-                                <input type="text" id="patientName" class="form-control" placeholder="Patient's full name" required>
-                                <span class="form-error">Name is required</span>
-                            </div>
-                            <div class="form-group">
-                                <label for="patientAge">Age *</label>
-                                <input type="number" id="patientAge" class="form-control" placeholder="e.g., 32" min="1" max="120" required>
-                                <span class="form-error">Age is required</span>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="patientGender">Gender *</label>
-                                <select id="patientGender" class="form-control" required>
-                                    <option value="">Select gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="patientPhone">Phone Number *</label>
-                                <input type="tel" id="patientPhone" class="form-control" placeholder="+91 XXXXX-XXXXX" required>
-                                <span class="form-error">Valid 10-digit number required</span>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="patientEmail">Email Address</label>
-                            <input type="email" id="patientEmail" class="form-control" placeholder="For report delivery">
-                            <span class="form-error">Valid email required</span>
-                            <span class="form-note">Reports will be sent to this email</span>
-                        </div>
-                        <div class="form-group">
-                            <label>Medical Conditions (if any)</label>
-                            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-                                <label class="form-check" style="margin-bottom: 0;"><input type="checkbox"> Diabetes</label>
-                                <label class="form-check" style="margin-bottom: 0;"><input type="checkbox"> Heart condition</label>
-                                <label class="form-check" style="margin-bottom: 0;"><input type="checkbox"> Pregnancy</label>
-                                <label class="form-check" style="margin-bottom: 0;"><input type="checkbox"> Metal implants</label>
-                                <label class="form-check" style="margin-bottom: 0;"><input type="checkbox"> Allergy</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label>Upload Prescription (Optional)</label>
-                            <div class="file-upload">
-                                <i class="fas fa-cloud-upload-alt"></i>
-                                <p>Click to upload your doctor's prescription</p>
-                                <input type="file" accept=".pdf,.jpg,.jpeg,.png">
-                            </div>
-                        </div>
-                    </form>
-
-                    <div class="booking-nav">
-                        <button class="btn btn-outline booking-prev">← Back</button>
-                        <button class="btn btn-accent booking-next">Next: Service Option →</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 4: Service Option -->
-            <div class="booking-step" id="step4">
-                <div class="form-container" style="max-width: 700px;">
-                    <h2 style="text-align: center; margin-bottom: 0.5rem;">How Would You Like to Take the Test?</h2>
-                    <p class="text-center" style="margin-bottom: 2rem;">Choose your preferred service option.</p>
-
-                    <div class="form-group">
-                        <div style="display: grid; gap: 1rem;">
-                            <div class="service-option-card" style="padding: 1.5rem;">
-                                <input type="radio" name="serviceOption" value="center" id="optCenter">
-                                <label for="optCenter" style="cursor: pointer; flex: 1;">
-                                    <strong style="display: block; font-size: 1.1rem; margin-bottom: 0.3rem;"><i class="fas fa-hospital" style="color: var(--teal); margin-right: 0.5rem;"></i> Visit Center</strong>
-                                    <small style="color: var(--text-muted); display: block;">Come to our diagnostic center. Multiple locations available.</small>
-                                </label>
-                            </div>
-                            <div class="service-option-card" style="padding: 1.5rem;">
-                                <input type="radio" name="serviceOption" value="home" id="optHome">
-                                <label for="optHome" style="cursor: pointer; flex: 1;">
-                                    <strong style="display: block; font-size: 1.1rem; margin-bottom: 0.3rem;"><i class="fas fa-home" style="color: var(--whatsapp-green); margin-right: 0.5rem;"></i> Home Collection</strong>
-                                    <small style="color: var(--text-muted); display: block;">Our phlebotomist visits your home. Free for orders above ₹[AMOUNT].</small>
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Center selection (shown when Visit Center is selected) -->
-                    <div class="form-group" style="margin-top: 1rem;">
-                        <label for="centerSelect">Select Preferred Center / Enter Home Address</label>
-                        <select id="centerSelect" class="form-control">
-                            <option value="">Choose center / Enter address below</option>
-                            <option value="main">[CITY] - Main Center, [AREA]</option>
-                            <option value="branch1">[CITY] - [AREA_1] Branch</option>
-                            <option value="branch2">[CITY] - [AREA_2] Branch</option>
-                        </select>
+                        <label for="inqName">Full Name *</label>
+                        <input type="text" id="inqName" class="form-control" placeholder="Your full name" required>
                     </div>
                     <div class="form-group">
-                        <label for="homeAddress">Home Address (for home collection)</label>
-                        <textarea id="homeAddress" class="form-control" placeholder="Enter your complete address with landmark & pincode" rows="3"></textarea>
+                        <label for="inqPhone">Phone Number *</label>
+                        <input type="tel" id="inqPhone" class="form-control" placeholder="+91 XXXXX-XXXXX" required>
                     </div>
-
-                    <div class="booking-nav">
-                        <button class="btn btn-outline booking-prev">← Back</button>
-                        <button class="btn btn-accent booking-next">Next: Pick Date & Time →</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Step 5: Date & Time Selection -->
-            <div class="booking-step" id="step5">
-                <div class="form-container" style="max-width: 700px;">
-                    <h2 style="text-align: center; margin-bottom: 0.5rem;">Select Date & Time</h2>
-                    <p class="text-center" style="margin-bottom: 2rem;">Choose your preferred appointment slot.</p>
-
                     <div class="form-group">
-                        <label for="appointmentDate">Preferred Date *</label>
-                        <input type="date" id="appointmentDate" class="form-control" required>
+                        <label for="inqEmail">Email Address</label>
+                        <input type="email" id="inqEmail" class="form-control" placeholder="your.email@example.com">
                     </div>
-
                     <div class="form-group">
-                        <label>Preferred Time Slot *</label>
-                        <div class="time-slots-grid">
-                            <div class="time-slot">7:00 AM</div>
-                            <div class="time-slot">7:30 AM</div>
-                            <div class="time-slot">8:00 AM</div>
-                            <div class="time-slot">8:30 AM</div>
-                            <div class="time-slot">9:00 AM</div>
-                            <div class="time-slot">9:30 AM</div>
-                            <div class="time-slot">10:00 AM</div>
-                            <div class="time-slot booked">10:30 AM</div>
-                            <div class="time-slot">11:00 AM</div>
-                            <div class="time-slot booked">11:30 AM</div>
-                            <div class="time-slot">12:00 PM</div>
-                            <div class="time-slot">2:00 PM</div>
-                            <div class="time-slot">3:00 PM</div>
-                            <div class="time-slot">4:00 PM</div>
-                            <div class="time-slot">5:00 PM</div>
-                            <div class="time-slot">6:00 PM</div>
-                        </div>
-                        <p class="form-note" style="margin-top: 0.75rem;"><i class="fas fa-info-circle"></i> Grey slots are already booked. For fasting tests, morning slots (7-9 AM) are recommended.</p>
+                        <label for="inqDate">Preferred Date *</label>
+                        <input type="date" id="inqDate" class="form-control" required>
                     </div>
-
-                    <div class="booking-nav">
-                        <button class="btn btn-outline booking-prev">← Back</button>
-                        <button class="btn btn-accent booking-next">Next: Review & Confirm →</button>
+                    <div class="form-group">
+                        <label for="inqMessage">Your Message *</label>
+                        <textarea id="inqMessage" class="form-control" rows="4" placeholder="Tell us what tests you need..." required></textarea>
                     </div>
-                </div>
-            </div>
-
-            <!-- Step 6: Review & Payment -->
-            <div class="booking-step" id="step6">
-                <div class="form-container" style="max-width: 700px;">
-                    <h2 style="text-align: center; margin-bottom: 1.5rem;">Review & Confirm Booking</h2>
-
-                    <div class="booking-summary">
-                        <h3 style="font-size: 1rem; margin-bottom: 1rem;">📋 Booking Summary</h3>
-                        <div class="booking-summary-row"><span>Tests Selected:</span><span><strong>Selected tests will appear here</strong></span></div>
-                        <div class="booking-summary-row"><span>Patient:</span><span>[Patient Name]</span></div>
-                        <div class="booking-summary-row"><span>Date & Time:</span><span>[Selected Date], [Time]</span></div>
-                        <div class="booking-summary-row"><span>Service:</span><span>[Visit Center / Home Collection]</span></div>
-                        <div class="booking-summary-row"><span>Location:</span><span>[Center / Home Address]</span></div>
-                        <div class="booking-summary-row"><span>Home Collection Fee:</span><span>FREE</span></div>
-                        <div class="booking-summary-row booking-summary-total"><span>Estimated Total:</span><span>₹[TOTAL]</span></div>
-                    </div>
-
-                    <div style="margin-top: 1.5rem;">
-                        <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">📝 Preparation Instructions</h3>
-                        <div style="background: rgba(44, 191, 181, 0.08); padding: 1rem; border-radius: var(--radius-sm); border-left: 3px solid var(--teal);">
-                            <ul style="font-size: 0.85rem; color: var(--text-light); padding-left: 1.5rem; margin-bottom: 0;">
-                                <li>Fasting of 10-12 hours may be required (water is allowed).</li>
-                                <li>Bring your doctor's prescription if available.</li>
-                                <li>Carry a valid photo ID (Aadhar/PAN/Passport).</li>
-                                <li>Wear comfortable clothing, especially for MRI/CT.</li>
-                                <li>Inform us about any ongoing medications or allergies.</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <div style="margin-top: 1.5rem;">
-                        <h3 style="font-size: 1rem; margin-bottom: 0.75rem;">💳 Payment Options</h3>
-                        <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-                            <span style="background: var(--bg-light); padding: 0.5rem 1rem; border-radius: var(--radius-pill); font-size: 0.85rem;"><i class="fas fa-money-bill-wave" style="color: var(--teal);"></i> Cash at Center</span>
-                            <span style="background: var(--bg-light); padding: 0.5rem 1rem; border-radius: var(--radius-pill); font-size: 0.85rem;"><i class="fas fa-credit-card" style="color: var(--teal);"></i> Card</span>
-                            <span style="background: var(--bg-light); padding: 0.5rem 1rem; border-radius: var(--radius-pill); font-size: 0.85rem;"><i class="fas fa-mobile-alt" style="color: var(--teal);"></i> UPI/GPay/PhonePe</span>
-                        </div>
-                    </div>
-
-                    <div class="form-check" style="margin-top: 1.5rem;">
-                        <input type="checkbox" id="termsAccept" required>
-                        <label for="termsAccept">I agree to the <a href="terms.html" style="color: var(--teal);">Terms & Conditions</a> and <a href="refund.html" style="color: var(--teal);">Cancellation Policy</a>.</label>
-                    </div>
-
-                    <div class="booking-nav" style="margin-top: 1.5rem;">
-                        <button class="btn btn-outline booking-prev">← Back</button>
-                        <button class="btn btn-accent btn-lg" onclick="document.getElementById('step6').style.display='none'; document.getElementById('bookingSuccess').style.display='block';">✅ Confirm Booking</button>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Success Screen -->
-            <div id="bookingSuccess" style="display: none;">
-                <div class="form-container" style="max-width: 600px;">
-                    <div class="booking-success">
-                        <div class="success-icon"><i class="fas fa-check"></i></div>
-                        <h2 style="color: var(--whatsapp-green);">Booking Confirmed!</h2>
-                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Your appointment has been successfully scheduled.</p>
-                        
-                        <div class="booking-summary" style="text-align: left;">
-                            <div class="booking-summary-row"><span>Booking ID:</span><span><strong>#UNI-2026-XXXXX</strong></span></div>
-                            <div class="booking-summary-row"><span>Status:</span><span style="color: var(--whatsapp-green); font-weight: 600;">✅ Confirmed</span></div>
-                        </div>
-
-                        <div style="margin-top: 1.5rem; background: rgba(44, 191, 181, 0.08); padding: 1.25rem; border-radius: var(--radius-sm); text-align: left;">
-                            <h4 style="font-size: 0.95rem; margin-bottom: 0.5rem;">What's Next?</h4>
-                            <ol style="font-size: 0.85rem; color: var(--text-light); padding-left: 1.5rem; margin-bottom: 0;">
-                                <li style="margin-bottom: 0.3rem;">Confirmation SMS + Email sent to your registered number</li>
-                                <li style="margin-bottom: 0.3rem;">Preparation instructions included in SMS</li>
-                                <li style="margin-bottom: 0.3rem;">Reminder call 1 hour before appointment</li>
-                                <li>Reports will be sent within 24 hours via email + SMS</li>
-                            </ol>
-                        </div>
-
-                        <div style="display: flex; gap: 0.75rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap;">
-                            <a href="index.html" class="btn btn-outline"><i class="fas fa-home"></i> Go Home</a>
-                            <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20just%20booked.%20My%20ID%20is%20UNI-2026-XXXXX" target="_blank" rel="noopener" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Share via WhatsApp</a>
-                        </div>
-                    </div>
-                </div>
+                    <button type="submit" class="btn btn-accent" style="width: 100%; display: flex; justify-content: center; align-items: center; gap: 0.5rem;">
+                        <i class="fab fa-whatsapp" style="font-size: 1.2rem;"></i> Book via WhatsApp
+                    </button>
+                </form>
             </div>
 
         </div>
@@ -374,21 +67,19 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-grid">
-                <div><h3 style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-heartbeat"></i> Uniscans & Labs</h3><p class="footer-about-text">Accurate, accessible, and affordable diagnostics.</p><div class="footer-social"><a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a></div></div>
+                <div><h3 style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-heartbeat"></i> Uniscans & Labs</h3><p class="footer-about-text">Accurate, accessible, and affordable diagnostics.</p></div>
                 <div><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li><li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div>
                 <div><h3>Services</h3><ul class="footer-links"><li><a href="services.html"><i class="fas fa-chevron-right"></i> MRI & CT</a></li><li><a href="packages.html"><i class="fas fa-chevron-right"></i> Health Packages</a></li></ul></div>
                 <div><h3>Contact</h3><ul class="footer-links"><li><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone"></i> +91 XXXXX-XXXXX</a></li><li><a href="mailto:info@[DOMAIN]"><i class="fas fa-envelope"></i> info@[DOMAIN]</a></li></ul></div>
-                <div><h3>Important</h3><ul class="footer-links"><li><a href="privacy.html"><i class="fas fa-chevron-right"></i> Privacy</a></li><li><a href="terms.html"><i class="fas fa-chevron-right"></i> Terms</a></li><li><a href="refund.html"><i class="fas fa-chevron-right"></i> Refund</a></li></ul></div>
-                <div><h3>For Patients</h3><ul class="footer-links"><li><a href="reports.html"><i class="fas fa-chevron-right"></i> Reports</a></li><li><a href="test-catalog.html"><i class="fas fa-chevron-right"></i> Test Catalog</a></li></ul></div>
+                
+                
             </div>
-            <div class="footer-bottom"><div class="footer-bottom-inner"><p>&copy; 2026 Uniscans & Labs. All Rights Reserved.</p><div class="ssl-badge"><i class="fas fa-lock"></i> SSL Secured</div></div></div>
+            <div class="footer-bottom"><div class="footer-bottom-inner"><p>&copy; 2026 Uniscans & Labs. All Rights Reserved. | <span style="font-size: 0.85rem;">Designed by <a href="#" style="color: var(--teal); font-weight: 600;">Upright Digital Solutions</a></span></p></div></div>
         </div>
     </footer>
 
     <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i><span class="tooltip">Need help booking?</span></a>
     <button class="back-to-top" id="backToTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
-    <div class="cookie-banner" id="cookieBanner"><p>We use cookies to improve your experience. <a href="privacy.html">Learn More</a></p><div class="cookie-buttons"><button class="btn cookie-btn-decline" id="cookieDecline">Decline</button><button class="btn btn-accent" id="cookieAccept">Accept</button></div></div>
-
     <script src="script.js"></script>
 </body>
 </html>

@@ -1403,7 +1403,7 @@ p {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
   gap: 2rem;
   margin-bottom: 3rem;
 }
@@ -3573,9 +3573,7 @@ textarea.form-control {
     bottom: 60px;
   }
 
-  body {
-    padding-bottom: 60px;
-  }
+
 }
 
 /* Focus outlines for accessibility */
