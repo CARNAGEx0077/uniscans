@@ -3,188 +3,674 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Packages | Uniscans & Labs - Comprehensive Checkups from ₹999</title>
-    <meta name="description" content="Compare 10+ health checkup packages at Uniscans & Labs. Master, Executive, Diabetes, Women's, Senior Citizen, and more. Save up to 40%.">
+    <title>Health Packages | Uniscans & Labs - Full Body Checkups from ₹999</title>
+    <meta name="description" content="Uniscans Full Body Checkup packages: Silver ₹999, Gold ₹1299, Platinum ₹2299, Diamond ₹2999. 69–79 parameters. Free home collection. Book now.">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ── PAGE-LEVEL OVERRIDES ── */
+        .pkg-hero {
+            background: linear-gradient(135deg, var(--section-light-purple) 0%, var(--section-alt) 100%);
+            padding: 3rem 0 2.5rem;
+            text-align: center;
+        }
+        .pkg-hero h1 { font-size: 2rem; color: var(--purple); margin-bottom: 0.5rem; }
+        .pkg-hero h1 span { color: #e74c3c; }
+        .pkg-hero p { color: var(--text-light); font-size: 1rem; margin: 0; }
+
+        /* ── 4-PLAN CARDS GRID ── */
+        .plans-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin: 2.5rem 0;
+        }
+        @media (max-width: 900px) { .plans-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 540px) { .plans-grid { grid-template-columns: 1fr; } }
+
+        .plan-tile {
+            border-radius: var(--radius-lg);
+            overflow: visible;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            margin-top: 1.2rem; /* room for popular badge */
+        }
+        .plan-tile-header {
+            border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+            overflow: hidden;
+        }
+        .plan-tile-body {
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+        }
+        .plan-tile:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Colour themes */
+        .plan-silver .plan-tile-header { background: #6B3FA0; }
+        .plan-silver .plan-tile-price  { background: #6B3FA0; }
+
+        .plan-gold .plan-tile-header   { background: #E6A817; }
+        .plan-gold .plan-tile-price    { background: #E6A817; }
+
+        .plan-platinum .plan-tile-header { background: #E91E8C; }
+        .plan-platinum .plan-tile-price  { background: #E91E8C; }
+
+        .plan-diamond .plan-tile-header  { background: #2CBFB5; }
+        .plan-diamond .plan-tile-price   { background: #2CBFB5; }
+
+        .plan-tile-header {
+            padding: 1.2rem 1rem 1rem;
+            text-align: center;
+            color: white;
+        }
+        .plan-tile-header .plan-tier-name {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 0.15rem;
+            letter-spacing: 0.02em;
+        }
+        .plan-tile-header .plan-tier-sub {
+            font-size: 0.78rem;
+            opacity: 0.9;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+        }
+        .plan-tile-header .plan-params {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            border-radius: var(--radius-pill);
+            padding: 0.2rem 0.8rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+
+        .plan-tile-price {
+            padding: 0.9rem 1rem;
+            text-align: center;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .plan-original {
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: line-through;
+            opacity: 0.75;
+        }
+        .plan-divider { opacity: 0.6; font-size: 0.9rem; }
+        .plan-offer {
+            font-size: 1.5rem;
+            font-weight: 800;
+        }
+
+        .plan-tile-body {
+            background: white;
+            padding: 1.25rem 1rem 1.5rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        .plan-feature-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            flex: 1;
+        }
+        .plan-feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.83rem;
+            color: var(--text-light);
+            padding: 0.3rem 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+        .plan-feature-list li:last-child { border-bottom: none; }
+        .plan-feature-list li i { font-size: 0.75rem; }
+        .plan-silver .plan-feature-list li i  { color: #6B3FA0; }
+        .plan-gold .plan-feature-list li i    { color: #E6A817; }
+        .plan-platinum .plan-feature-list li i { color: #E91E8C; }
+        .plan-diamond .plan-feature-list li i  { color: #2CBFB5; }
+
+        .plan-cta {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 0.7rem;
+            border-radius: var(--radius-pill);
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: filter 0.2s ease, transform 0.2s ease;
+            text-decoration: none;
+        }
+        .plan-cta:hover { filter: brightness(1.1); transform: translateY(-1px); color: white; }
+
+        .plan-silver  .plan-cta { background: #6B3FA0; }
+        .plan-gold    .plan-cta { background: #E6A817; }
+        .plan-platinum .plan-cta { background: #E91E8C; }
+        .plan-diamond .plan-cta  { background: #2CBFB5; }
+
+        /* Popular badge */
+        .popular-badge-top {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e74c3c;
+            color: white;
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 0.3rem 1.2rem;
+            border-radius: var(--radius-pill);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            z-index: 5;
+            white-space: nowrap;
+            box-shadow: 0 3px 10px rgba(231,76,60,0.45);
+            animation: gentle-bounce 2s infinite;
+        }
+
+        /* ── COMPARISON TABLE ── */
+        .compare-section { padding: 3rem 0 4rem; }
+        .compare-section h2 { text-align: center; margin-bottom: 0.5rem; }
+        .compare-section > .container > p { text-align: center; color: var(--text-light); margin-bottom: 2rem; }
+
+        .compare-wrap {
+            overflow-x: auto;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+        }
+        table.cmp {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            min-width: 560px;
+        }
+        table.cmp thead tr th {
+            padding: 0.9rem 1rem;
+            font-size: 0.95rem;
+            font-weight: 700;
+            text-align: center;
+            border-bottom: 2px solid var(--border-color);
+        }
+        table.cmp thead tr th:first-child { text-align: left; color: var(--text-main); background: var(--bg-light); }
+        table.cmp thead .th-silver   { background: #6B3FA0; color: white; }
+        table.cmp thead .th-gold     { background: #E6A817; color: white; }
+        table.cmp thead .th-platinum { background: #E91E8C; color: white; }
+        table.cmp thead .th-diamond  { background: #2CBFB5; color: white; }
+
+        table.cmp tbody tr td {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid var(--border-light);
+            text-align: center;
+            font-size: 0.88rem;
+            color: var(--text-light);
+        }
+        table.cmp tbody tr td:first-child {
+            text-align: left;
+            font-weight: 500;
+            color: var(--text-main);
+            background: var(--bg-light);
+            position: sticky;
+            left: 0;
+            z-index: 1;
+        }
+        table.cmp tbody tr:hover td { background: #f9f9ff; }
+        table.cmp tbody tr:hover td:first-child { background: #f0eef8; }
+
+        table.cmp .section-row td {
+            background: var(--section-light-purple) !important;
+            font-weight: 700;
+            color: var(--purple);
+            font-size: 0.8rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.5rem 1rem;
+        }
+        table.cmp .count-row td { font-weight: 700; font-size: 0.95rem; color: var(--text-main); }
+        table.cmp .count-row .c-silver   { color: #6B3FA0; }
+        table.cmp .count-row .c-gold     { color: #E6A817; }
+        table.cmp .count-row .c-platinum { color: #E91E8C; }
+        table.cmp .count-row .c-diamond  { color: #2CBFB5; }
+
+        .ico-yes { color: #27ae60; font-size: 1rem; }
+        .ico-no  { color: #ccc; font-size: 0.85rem; }
+
+        /* ── CTA BOTTOM ── */
+        .pkg-cta { background: linear-gradient(135deg, var(--purple), #8B5FC7); padding: 3rem 0; text-align: center; }
+        .pkg-cta h2 { color: white; margin-bottom: 0.5rem; }
+        .pkg-cta p  { color: rgba(255,255,255,0.85); margin-bottom: 1.5rem; }
+        .pkg-cta-btns { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    </style>
 </head>
 <body>
     <a href="#main-content" class="skip-to-main">Skip to Main Content</a>
-    <div class="promo-banner" id="promoBanner">🎉 Master Health Checkup @ ₹2,999 (Save ₹1,000) — Limited Period! <a href="appointment.html?plan=master">Book Now →</a><button class="promo-close" id="promoClose" aria-label="Close">×</button></div>
-    <div class="top-bar"><div class="container"><div class="top-bar-left"><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone-alt"></i> +91 XXXXX-XXXXX</a><a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a></div><div class="top-bar-right"><a href="reports.html">View Reports</a></div></div></div>
-    <header class="navbar" id="navbar"><div class="container"><a href="index.html" class="logo"><i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span></a><nav class="nav-links" id="navLinks"><a href="index.html">Home</a><div class="nav-dropdown"><a href="services.html">Services <i class="fas fa-chevron-down"></i></a><div class="dropdown-menu"><a href="services.html"><i class="fas fa-stethoscope"></i> All Services</a><a href="packages.html"><i class="fas fa-box-open"></i> Health Packages</a><a href="test-catalog.html"><i class="fas fa-list-alt"></i> Test Catalog</a><a href="preparation.html"><i class="fas fa-clipboard-list"></i> Preparation Guides</a></div></div><a href="about.html">About Us</a><a href="faq.html">FAQs</a><a href="contact.html">Contact</a><a href="appointment.html" class="btn btn-accent">Book Appointment</a></nav><div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div></div></header>
+
+    <!-- Promo Banner -->
+    <div class="promo-banner" id="promoBanner">
+        🎉 Full Body Checkup Starting at ₹999 — Limited Period Offer!
+        <a href="appointment.html?plan=silver">Book Now →</a>
+        <button class="promo-close" id="promoClose" aria-label="Close">×</button>
+    </div>
+
+    <!-- Top Bar -->
+    <div class="top-bar"><div class="container"><div class="top-bar-left">
+        <a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone-alt"></i> +91 XXXXX-XXXXX</a>
+        <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+    </div><div class="top-bar-right"><a href="reports.html">View Reports</a></div></div></div>
+
+    <!-- Navbar -->
+    <header class="navbar" id="navbar"><div class="container">
+        <a href="index.html" class="logo"><i class="fas fa-heartbeat"></i> Uniscans <span>& Labs</span></a>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <div class="nav-dropdown">
+                <a href="packages.html" class="active">Services <i class="fas fa-chevron-down"></i></a>
+                <div class="dropdown-menu">
+                    <a href="packages.html"><i class="fas fa-box-open"></i> Health Packages</a>
+                    
+                </div>
+            </div>
+            <a href="about.html">About Us</a>
+            <a href="faq.html">FAQs</a>
+            <a href="contact.html">Contact</a>
+            <a href="appointment.html" class="btn btn-accent">Book Appointment</a>
+        </nav>
+        <div class="mobile-toggle" id="mobileToggle"><i class="fas fa-bars"></i></div>
+    </div></header>
     <div class="mobile-overlay" id="mobileOverlay"></div>
-    <div class="trust-bar"><div class="trust-bar-inner"><div class="trust-bar-item"><i class="fas fa-certificate"></i> NABL Certified</div><div class="trust-bar-item"><i class="fas fa-shield-alt"></i> ISO 9001:2015</div><div class="trust-bar-item"><i class="fas fa-users"></i> 10,000+ Happy Patients</div><div class="trust-bar-item"><i class="fas fa-clock"></i> 24hr Reports</div><div class="trust-bar-item"><i class="fas fa-home"></i> Free Home Collection</div></div></div>
-    <div class="breadcrumb" style="padding-top: 1rem; background: var(--section-alt);"><div class="container"><ul class="breadcrumb-list"><li><a href="index.html">Home</a></li><li><span class="separator"><i class="fas fa-chevron-right"></i></span></li><li><a href="services.html">Services</a></li><li><span class="separator"><i class="fas fa-chevron-right"></i></span></li><li class="active">Health Packages</li></ul></div></div>
+
+    <!-- Trust Bar -->
+    <div class="trust-bar"><div class="trust-bar-inner">
+        <div class="trust-bar-item"><i class="fas fa-certificate"></i> NABL Certified</div>
+        <div class="trust-bar-item"><i class="fas fa-shield-alt"></i> ISO 9001:2015</div>
+        <div class="trust-bar-item"><i class="fas fa-users"></i> 10,000+ Happy Patients</div>
+        <div class="trust-bar-item"><i class="fas fa-clock"></i> 24hr Reports</div>
+        <div class="trust-bar-item"><i class="fas fa-home"></i> Free Home Collection</div>
+    </div></div>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" style="padding-top:1rem; background:var(--section-alt);"><div class="container">
+        <ul class="breadcrumb-list">
+            <li><a href="index.html">Home</a></li>
+            <li><span class="separator"><i class="fas fa-chevron-right"></i></span></li>
+            <li class="active">Health Packages</li>
+        </ul>
+    </div></div>
 
     <main id="main-content">
 
     <!-- Hero -->
-    <section class="section section-alt" style="padding-top: 2rem; padding-bottom: 3rem;">
-        <div class="container text-center">
-            <h1>Health Checkup Packages</h1>
-            <p style="font-size: 1.1rem;">Comprehensive screening packages designed for every age group. Save up to 40%.</p>
-            <div class="hero-trust-badges" style="justify-content: center; margin-top: 1.5rem;">
-                <span class="hero-trust-badge"><i class="fas fa-box-open"></i> 10+ Packages</span>
-                <span class="hero-trust-badge"><i class="fas fa-rupee-sign"></i> Starting ₹999</span>
-                <span class="hero-trust-badge"><i class="fas fa-home"></i> Free Home Collection</span>
-                <span class="hero-trust-badge"><i class="fas fa-user-md"></i> Free Consultation</span>
+    <section class="pkg-hero">
+        <div class="container">
+            <h1>Uniscans gets your health checkup ease with FullBody Checkups<br>Starting at <span>₹999 only!</span></h1>
+            <p>All packages include Free Home Collection · NABL Certified Reports · 24-Hour Delivery</p>
+        </div>
+    </section>
+
+    <!-- 4 Plan Cards -->
+    <section class="section" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="plans-grid">
+
+                <!-- SILVER -->
+                <div class="plan-tile plan-silver fade-in">
+                    <div class="plan-tile-header">
+                        <div class="plan-tier-name">Silver</div>
+                        <div class="plan-tier-sub">Full Body Checkup</div>
+                        <span class="plan-params">69 Parameters</span>
+                    </div>
+                    <div class="plan-tile-price">
+                        <span class="plan-original">₹2710</span>
+                        <span class="plan-divider">|</span>
+                        <span class="plan-offer">₹999/-</span>
+                    </div>
+                    <div class="plan-tile-body">
+                        <ul class="plan-feature-list">
+                            <li><i class="fas fa-check-circle"></i> Fasting Blood Glucose</li>
+                            <li><i class="fas fa-check-circle"></i> CBC</li>
+                            <li><i class="fas fa-check-circle"></i> Lipid Profile</li>
+                            <li><i class="fas fa-check-circle"></i> LFT</li>
+                            <li><i class="fas fa-check-circle"></i> RFT</li>
+                            <li><i class="fas fa-check-circle"></i> Thyroid Profile</li>
+                            <li><i class="fas fa-check-circle"></i> Electrolytes</li>
+                            <li><i class="fas fa-check-circle"></i> Free Home Collection</li>
+                        </ul>
+                        <a href="appointment.html?plan=silver" class="plan-cta" id="book-silver">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- GOLD -->
+                <div class="plan-tile plan-gold fade-in">
+                    <span class="popular-badge-top">⭐ Most Popular</span>
+                    <div class="plan-tile-header">
+                        <div class="plan-tier-name">Gold</div>
+                        <div class="plan-tier-sub">Full Body Checkup</div>
+                        <span class="plan-params">71 Parameters</span>
+                    </div>
+                    <div class="plan-tile-price">
+                        <span class="plan-original">₹3160</span>
+                        <span class="plan-divider">|</span>
+                        <span class="plan-offer">₹1299/-</span>
+                    </div>
+                    <div class="plan-tile-body">
+                        <ul class="plan-feature-list">
+                            <li><i class="fas fa-check-circle"></i> Everything in Silver</li>
+                            <li><i class="fas fa-check-circle"></i> Urine Analysis</li>
+                            <li><i class="fas fa-check-circle"></i> HbA1c</li>
+                            <li><i class="fas fa-check-circle"></i> ECG</li>
+                            <li><i class="fas fa-check-circle"></i> Free Doctor Consultation</li>
+                            <li><i class="fas fa-check-circle"></i> Free Home Collection</li>
+                            <li><i class="fas fa-check-circle"></i> Priority Reporting</li>
+                            <li><i class="fas fa-check-circle"></i> 24hr Turnaround</li>
+                        </ul>
+                        <a href="appointment.html?plan=gold" class="plan-cta" id="book-gold">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- PLATINUM -->
+                <div class="plan-tile plan-platinum fade-in">
+                    <div class="plan-tile-header">
+                        <div class="plan-tier-name">Platinum</div>
+                        <div class="plan-tier-sub">Full Body Checkup</div>
+                        <span class="plan-params">78 Parameters</span>
+                    </div>
+                    <div class="plan-tile-price">
+                        <span class="plan-original">₹4910</span>
+                        <span class="plan-divider">|</span>
+                        <span class="plan-offer">₹2299/-</span>
+                    </div>
+                    <div class="plan-tile-body">
+                        <ul class="plan-feature-list">
+                            <li><i class="fas fa-check-circle"></i> Everything in Gold</li>
+                            <li><i class="fas fa-check-circle"></i> Vitamin Profile</li>
+                            <li><i class="fas fa-check-circle"></i> CRP</li>
+                            <li><i class="fas fa-check-circle"></i> Iron Profile</li>
+                            <li><i class="fas fa-check-circle"></i> Calcium & Phosphorus</li>
+                            <li><i class="fas fa-check-circle"></i> Free Doctor Consultation</li>
+                            <li><i class="fas fa-check-circle"></i> Free Home Collection</li>
+                            <li><i class="fas fa-check-circle"></i> Same-Day Report</li>
+                        </ul>
+                        <a href="appointment.html?plan=platinum" class="plan-cta" id="book-platinum">Book Now</a>
+                    </div>
+                </div>
+
+                <!-- DIAMOND -->
+                <div class="plan-tile plan-diamond fade-in">
+                    <div class="plan-tile-header">
+                        <div class="plan-tier-name">Diamond</div>
+                        <div class="plan-tier-sub">Full Body Checkup</div>
+                        <span class="plan-params">79 Parameters</span>
+                    </div>
+                    <div class="plan-tile-price">
+                        <span class="plan-original">₹7310</span>
+                        <span class="plan-divider">|</span>
+                        <span class="plan-offer">₹2999/-</span>
+                    </div>
+                    <div class="plan-tile-body">
+                        <ul class="plan-feature-list">
+                            <li><i class="fas fa-check-circle"></i> Everything in Platinum</li>
+                            <li><i class="fas fa-check-circle"></i> Lipase</li>
+                            <li><i class="fas fa-check-circle"></i> Amylase</li>
+                            <li><i class="fas fa-check-circle"></i> Dedicated Health Manager</li>
+                            <li><i class="fas fa-check-circle"></i> Priority Appointment</li>
+                            <li><i class="fas fa-check-circle"></i> Free Doctor Consultation</li>
+                            <li><i class="fas fa-check-circle"></i> Free Home Collection</li>
+                            <li><i class="fas fa-check-circle"></i> Express Same-Day Report</li>
+                        </ul>
+                        <a href="appointment.html?plan=diamond" class="plan-cta" id="book-diamond">Book Now</a>
+                    </div>
+                </div>
+
+            </div><!-- /plans-grid -->
+
+            <!-- WhatsApp quick enquiry -->
+            <div class="text-center" style="margin-top:1rem;">
+                <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20enquire%20about%20health%20packages" target="_blank" rel="noopener" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Enquire on WhatsApp
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Packages Grid -->
-    <section class="section">
+    <!-- Comparison Table -->
+    <section class="compare-section section-alt" id="compare">
         <div class="container">
-            <div class="grid" style="grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 2rem;">
+            <h2>Uniscans Full Body Checkup — What's Included?</h2>
+            <p>Compare all four plans side by side to find the one that fits you best.</p>
+            <div class="compare-wrap">
+                <table class="cmp">
+                    <thead>
+                        <tr>
+                            <th>Uniscans Full Body Checkup</th>
+                            <th class="th-silver">Silver</th>
+                            <th class="th-gold">Gold</th>
+                            <th class="th-platinum">Platinum</th>
+                            <th class="th-diamond">Diamond</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Parameter count -->
+                        <tr class="count-row">
+                            <td>No. of Tests Included</td>
+                            <td class="c-silver">69</td>
+                            <td class="c-gold">71</td>
+                            <td class="c-platinum">78</td>
+                            <td class="c-diamond">79</td>
+                        </tr>
 
-                <!-- Basic -->
-                <div class="package-card-full fade-in">
-                    <div class="package-header">
-                        <h3 style="margin-bottom: 0.25rem;">Basic Health Checkup</h3>
-                        <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">For young adults 18-30 years</p>
-                        <div class="package-pricing"><span class="original-price">₹1,999</span><span class="offer-price">₹999</span><span class="savings">Save 50%</span></div>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-quick-info"><span><i class="fas fa-vial"></i> 30+ Tests</span><span><i class="fas fa-clock"></i> 24hr Report</span><span><i class="fas fa-home"></i> Home Collection</span></div>
-                        <div class="package-tests-list"><h5>Tests Included:</h5><ul><li><i class="fas fa-check"></i> CBC</li><li><i class="fas fa-check"></i> Lipid Profile</li><li><i class="fas fa-check"></i> Fasting Blood Sugar</li><li><i class="fas fa-check"></i> LFT</li><li><i class="fas fa-check"></i> KFT</li><li><i class="fas fa-check"></i> Thyroid (TSH)</li><li><i class="fas fa-check"></i> Urine Routine</li><li><i class="fas fa-check"></i> ESR</li></ul></div>
-                        <div class="package-actions"><a href="appointment.html?plan=basic" class="btn btn-accent">Book Now</a><a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20Basic%20Health%20Checkup" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Enquire</a></div>
-                    </div>
-                </div>
+                        <!-- Basic Panel -->
+                        <tr class="section-row"><td colspan="5">Basic Panel</td></tr>
+                        <tr>
+                            <td>Fasting Blood Glucose</td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td>CBC</td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Lipid Profile</td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
 
-                <!-- Master -->
-                <div class="package-card-full fade-in">
-                    <div class="package-header">
-                        <div class="package-badge popular">Most Popular</div>
-                        <h3 style="margin-bottom: 0.25rem;">Master Health Checkup</h3>
-                        <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">For adults 30+ years</p>
-                        <div class="package-pricing"><span class="original-price">₹4,999</span><span class="offer-price">₹2,999</span><span class="savings">Save 40%</span></div>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-quick-info"><span><i class="fas fa-vial"></i> 60+ Tests</span><span><i class="fas fa-clock"></i> 24hr Report</span><span><i class="fas fa-home"></i> Free Home</span><span><i class="fas fa-user-md"></i> Free Consult</span></div>
-                        <div class="package-tests-list"><h5>Tests Included:</h5><ul><li><i class="fas fa-check"></i> Complete Blood Count</li><li><i class="fas fa-check"></i> Lipid Profile</li><li><i class="fas fa-check"></i> Liver Function (LFT)</li><li><i class="fas fa-check"></i> Kidney Function (KFT)</li><li><i class="fas fa-check"></i> Thyroid (T3,T4,TSH)</li><li><i class="fas fa-check"></i> Diabetes (FBS, HbA1c)</li><li><i class="fas fa-check"></i> Vitamin D & B12</li><li><i class="fas fa-check"></i> Iron Profile</li><li><i class="fas fa-check"></i> Urine Routine</li><li><i class="fas fa-check"></i> ECG</li></ul></div>
-                        <div class="package-actions"><a href="appointment.html?plan=master" class="btn btn-accent">Book Now</a><a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20Master%20Health%20Checkup" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Enquire</a></div>
-                    </div>
-                </div>
+                        <!-- Organ Function -->
+                        <tr class="section-row"><td colspan="5">Organ Function</td></tr>
+                        <tr>
+                            <td>LFT (Liver Function)</td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td>RFT (Kidney Function)</td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Thyroid Profile</td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Electrolytes</td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
 
-                <!-- Executive -->
-                <div class="package-card-full fade-in">
-                    <div class="package-header">
-                        <div class="package-badge value">Best Value</div>
-                        <h3 style="margin-bottom: 0.25rem;">Executive Health Checkup</h3>
-                        <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">For corporate professionals</p>
-                        <div class="package-pricing"><span class="original-price">₹9,999</span><span class="offer-price">₹5,999</span><span class="savings">Save 40%</span></div>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-quick-info"><span><i class="fas fa-vial"></i> 100+ Tests</span><span><i class="fas fa-clock"></i> 24hr Report</span><span><i class="fas fa-home"></i> Free Home</span><span><i class="fas fa-user-md"></i> Free Consult</span></div>
-                        <div class="package-tests-list"><h5>Tests Included:</h5><ul><li><i class="fas fa-check"></i> Everything in Master</li><li><i class="fas fa-check"></i> Cancer Markers (PSA/CA-125)</li><li><i class="fas fa-check"></i> 2D Echo</li><li><i class="fas fa-check"></i> TMT (Stress Test)</li><li><i class="fas fa-check"></i> Chest X-Ray</li><li><i class="fas fa-check"></i> Ultrasound Abdomen</li><li><i class="fas fa-check"></i> Hormonal Panel</li><li><i class="fas fa-check"></i> Calcium & Phosphorus</li></ul></div>
-                        <div class="package-actions"><a href="appointment.html?plan=executive" class="btn btn-accent">Book Now</a><a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20to%20book%20Executive%20Checkup" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Enquire</a></div>
-                    </div>
-                </div>
+                        <!-- Diabetes & Urine -->
+                        <tr class="section-row"><td colspan="5">Diabetes & Urine</td></tr>
+                        <tr>
+                            <td>Urine Analysis</td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td>HbA1c</td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
 
-                <!-- Diabetes Care -->
-                <div class="package-card-full fade-in">
-                    <div class="package-header">
-                        <h3 style="margin-bottom: 0.25rem;">Diabetes Care Package</h3>
-                        <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">For diabetes patients & at-risk</p>
-                        <div class="package-pricing"><span class="original-price">₹3,499</span><span class="offer-price">₹1,999</span><span class="savings">Save 43%</span></div>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-quick-info"><span><i class="fas fa-vial"></i> 25+ Tests</span><span><i class="fas fa-clock"></i> 24hr Report</span><span><i class="fas fa-home"></i> Free Home</span></div>
-                        <div class="package-tests-list"><h5>Tests Included:</h5><ul><li><i class="fas fa-check"></i> FBS & PPBS</li><li><i class="fas fa-check"></i> HbA1c</li><li><i class="fas fa-check"></i> Lipid Profile</li><li><i class="fas fa-check"></i> Kidney Function</li><li><i class="fas fa-check"></i> Microalbumin</li><li><i class="fas fa-check"></i> Urine Routine</li><li><i class="fas fa-check"></i> CBC</li><li><i class="fas fa-check"></i> ECG</li></ul></div>
-                        <div class="package-actions"><a href="appointment.html?plan=diabetes" class="btn btn-accent">Book Now</a><a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20Diabetes%20Care%20Package" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Enquire</a></div>
-                    </div>
-                </div>
+                        <!-- Vitamins & Minerals -->
+                        <tr class="section-row"><td colspan="5">Vitamins & Minerals</td></tr>
+                        <tr>
+                            <td>Vitamin Profile (D, B12)</td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Iron Profile</td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Calcium & Phosphorus</td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
 
-                <!-- Women's Wellness -->
-                <div class="package-card-full fade-in">
-                    <div class="package-header" style="background: linear-gradient(135deg, #FFF0F5, #F3EEFF);">
-                        <h3 style="margin-bottom: 0.25rem; color: #E91E8C;">Women's Wellness Package</h3>
-                        <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">For women 25-50 years</p>
-                        <div class="package-pricing"><span class="original-price">₹5,499</span><span class="offer-price">₹3,499</span><span class="savings">Save 36%</span></div>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-quick-info"><span><i class="fas fa-vial"></i> 45+ Tests</span><span><i class="fas fa-clock"></i> 24hr Report</span><span><i class="fas fa-home"></i> Free Home</span><span><i class="fas fa-user-md"></i> Free Consult</span></div>
-                        <div class="package-tests-list"><h5>Tests Included:</h5><ul><li><i class="fas fa-check"></i> CBC & Iron Profile</li><li><i class="fas fa-check"></i> Thyroid Panel</li><li><i class="fas fa-check"></i> Vitamin D & B12</li><li><i class="fas fa-check"></i> Calcium & Bone Health</li><li><i class="fas fa-check"></i> Hormonal Panel</li><li><i class="fas fa-check"></i> Lipid Profile</li><li><i class="fas fa-check"></i> Urine Complete</li><li><i class="fas fa-check"></i> Liver & Kidney</li></ul></div>
-                        <div class="package-actions"><a href="appointment.html?plan=womens" class="btn btn-accent">Book Now</a><a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20Women's%20Wellness%20Package" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Enquire</a></div>
-                    </div>
-                </div>
+                        <!-- Inflammation -->
+                        <tr class="section-row"><td colspan="5">Inflammation Markers</td></tr>
+                        <tr>
+                            <td>CRP</td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
 
-                <!-- Senior Citizen -->
-                <div class="package-card-full fade-in">
-                    <div class="package-header">
-                        <h3 style="margin-bottom: 0.25rem;">Senior Citizen Package</h3>
-                        <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">For adults 60+ years</p>
-                        <div class="package-pricing"><span class="original-price">₹7,999</span><span class="offer-price">₹4,499</span><span class="savings">Save 44%</span></div>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-quick-info"><span><i class="fas fa-vial"></i> 70+ Tests</span><span><i class="fas fa-clock"></i> 24hr Report</span><span><i class="fas fa-home"></i> Free Home</span><span><i class="fas fa-user-md"></i> Free Consult</span></div>
-                        <div class="package-tests-list"><h5>Tests Included:</h5><ul><li><i class="fas fa-check"></i> Everything in Master</li><li><i class="fas fa-check"></i> ECG + 2D Echo</li><li><i class="fas fa-check"></i> Bone Density (DEXA)</li><li><i class="fas fa-check"></i> PSA (Men) / CA-125 (Women)</li><li><i class="fas fa-check"></i> Vitamin D & B12</li><li><i class="fas fa-check"></i> Calcium & Phosphorus</li><li><i class="fas fa-check"></i> Iron Profile</li><li><i class="fas fa-check"></i> Uric Acid</li></ul></div>
-                        <div class="package-actions"><a href="appointment.html?plan=senior" class="btn btn-accent">Book Now</a><a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20Senior%20Citizen%20Package" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Enquire</a></div>
-                    </div>
-                </div>
+                        <!-- Specialized -->
+                        <tr class="section-row"><td colspan="5">Specialized (Diamond Only)</td></tr>
+                        <tr>
+                            <td>Lipase</td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Amylase</td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-times ico-no"></i></td>
+                            <td><i class="fas fa-check ico-yes"></i></td>
+                        </tr>
 
-                <!-- Cardiac -->
-                <div class="package-card-full fade-in">
-                    <div class="package-header">
-                        <h3 style="margin-bottom: 0.25rem;">Cardiac Health Package</h3>
-                        <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">Heart disease risk assessment</p>
-                        <div class="package-pricing"><span class="original-price">₹6,999</span><span class="offer-price">₹3,999</span><span class="savings">Save 43%</span></div>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-quick-info"><span><i class="fas fa-vial"></i> 35+ Tests</span><span><i class="fas fa-clock"></i> 24hr Report</span><span><i class="fas fa-home"></i> Free Home</span></div>
-                        <div class="package-tests-list"><h5>Tests Included:</h5><ul><li><i class="fas fa-check"></i> Lipid Profile</li><li><i class="fas fa-check"></i> ECG</li><li><i class="fas fa-check"></i> 2D Echo</li><li><i class="fas fa-check"></i> TMT (Stress Test)</li><li><i class="fas fa-check"></i> hs-CRP</li><li><i class="fas fa-check"></i> Troponin</li><li><i class="fas fa-check"></i> Homocysteine</li><li><i class="fas fa-check"></i> HbA1c</li></ul></div>
-                        <div class="package-actions"><a href="appointment.html?plan=cardiac" class="btn btn-accent">Book Now</a><a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20want%20Cardiac%20Package" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Enquire</a></div>
-                    </div>
-                </div>
-
-                <!-- Pre-Employment -->
-                <div class="package-card-full fade-in">
-                    <div class="package-header">
-                        <h3 style="margin-bottom: 0.25rem;">Pre-Employment Checkup</h3>
-                        <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">For job applicants & companies</p>
-                        <div class="package-pricing"><span class="original-price">₹2,499</span><span class="offer-price">₹1,499</span><span class="savings">Save 40%</span></div>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-quick-info"><span><i class="fas fa-vial"></i> 20+ Tests</span><span><i class="fas fa-clock"></i> Same Day</span><span><i class="fas fa-building"></i> Corporate Rates</span></div>
-                        <div class="package-tests-list"><h5>Tests Included:</h5><ul><li><i class="fas fa-check"></i> CBC</li><li><i class="fas fa-check"></i> Blood Sugar</li><li><i class="fas fa-check"></i> Urine Drug Screen</li><li><i class="fas fa-check"></i> Chest X-Ray</li><li><i class="fas fa-check"></i> ECG</li><li><i class="fas fa-check"></i> Vision Test</li><li><i class="fas fa-check"></i> BMI Assessment</li><li><i class="fas fa-check"></i> Physical Exam</li></ul></div>
-                        <div class="package-actions"><a href="appointment.html?plan=preemployment" class="btn btn-accent">Book Now</a><a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20need%20Pre-Employment%20Checkup" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Enquire</a></div>
-                    </div>
-                </div>
-
-                <!-- Fever Panel -->
-                <div class="package-card-full fade-in">
-                    <div class="package-header">
-                        <h3 style="margin-bottom: 0.25rem;">Fever Panel</h3>
-                        <p style="margin-bottom: 0; font-size: 0.85rem; color: var(--text-muted);">For persistent or unknown fever</p>
-                        <div class="package-pricing"><span class="original-price">₹2,999</span><span class="offer-price">₹1,499</span><span class="savings">Save 50%</span></div>
-                    </div>
-                    <div class="package-body">
-                        <div class="package-quick-info"><span><i class="fas fa-vial"></i> 15+ Tests</span><span><i class="fas fa-clock"></i> 24hr Report</span><span><i class="fas fa-home"></i> Home Collection</span></div>
-                        <div class="package-tests-list"><h5>Tests Included:</h5><ul><li><i class="fas fa-check"></i> CBC + ESR</li><li><i class="fas fa-check"></i> Dengue NS1 & IgM</li><li><i class="fas fa-check"></i> Malaria (Antigen)</li><li><i class="fas fa-check"></i> Typhoid (Widal)</li><li><i class="fas fa-check"></i> Liver Function</li><li><i class="fas fa-check"></i> Urine Culture</li><li><i class="fas fa-check"></i> CRP</li><li><i class="fas fa-check"></i> Blood Culture</li></ul></div>
-                        <div class="package-actions"><a href="appointment.html?plan=fever" class="btn btn-accent">Book Now</a><a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20I%20need%20Fever%20Panel" target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Enquire</a></div>
-                    </div>
-                </div>
-
+                        <!-- CTA Row -->
+                        <tr>
+                            <td><strong>Price</strong></td>
+                            <td><strong style="color:#6B3FA0;">₹999/-</strong></td>
+                            <td><strong style="color:#c78f00;">₹1299/-</strong></td>
+                            <td><strong style="color:#E91E8C;">₹2299/-</strong></td>
+                            <td><strong style="color:#2CBFB5;">₹2999/-</strong></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td><a href="appointment.html?plan=silver"   class="btn btn-sm" style="background:#6B3FA0;color:white;width:100%;">Book Now</a></td>
+                            <td><a href="appointment.html?plan=gold"     class="btn btn-sm" style="background:#E6A817;color:white;width:100%;">Book Now</a></td>
+                            <td><a href="appointment.html?plan=platinum" class="btn btn-sm" style="background:#E91E8C;color:white;width:100%;">Book Now</a></td>
+                            <td><a href="appointment.html?plan=diamond"  class="btn btn-sm" style="background:#2CBFB5;color:white;width:100%;">Book Now</a></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="section section-alt text-center">
+    <!-- Bottom CTA -->
+    <section class="pkg-cta">
         <div class="container">
-            <h2>Need Help Choosing?</h2>
-            <p>Our team can recommend the right package based on your age, health goals, and medical history.</p>
-            <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="tel:+91XXXXXXXXXX" class="btn btn-primary btn-lg"><i class="fas fa-phone-alt"></i> Call for Free Guidance</a>
-                <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20help%20me%20choose%20a%20package" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg"><i class="fab fa-whatsapp"></i> Chat with Expert</a>
+            <h2>Not Sure Which Plan to Choose?</h2>
+            <p>Our team will help you pick the best package based on your age, health history, and goals — completely free.</p>
+            <div class="pkg-cta-btns">
+                <a href="tel:+91XXXXXXXXXX" class="btn btn-lg" style="background:white; color:var(--purple); font-weight:700;">
+                    <i class="fas fa-phone-alt"></i> Call for Free Guidance
+                </a>
+                <a href="https://wa.me/91XXXXXXXXXX?text=Hi%2C%20help%20me%20choose%20a%20health%20package" target="_blank" rel="noopener" class="btn btn-whatsapp btn-lg">
+                    <i class="fab fa-whatsapp"></i> Chat with Expert
+                </a>
             </div>
         </div>
     </section>
 
     </main>
 
-    <footer class="footer"><div class="container"><div class="footer-grid"><div><h3 style="display: flex; align-items: center; gap: 0.5rem;"><i class="fas fa-heartbeat"></i> Uniscans & Labs</h3><p class="footer-about-text">Accurate, accessible, affordable diagnostics.</p></div><div><h3>Quick Links</h3><ul class="footer-links"><li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li><li><a href="services.html"><i class="fas fa-chevron-right"></i> Services</a></li><li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li><li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li></ul></div><div><h3>Contact</h3><ul class="footer-links"><li><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone"></i> +91 XXXXX-XXXXX</a></li><li><a href="mailto:info@[DOMAIN]"><i class="fas fa-envelope"></i> info@[DOMAIN]</a></li></ul></div></div><div class="footer-bottom"><div class="footer-bottom-inner"><p>&copy; 2026 Uniscans & Labs. All Rights Reserved. | <span style="font-size: 0.85rem;">Designed by <a href="#" style="color: var(--teal); font-weight: 600;">Upright Digital Solutions</a></span></p></div></div></div></footer>
+    <!-- Footer -->
+    <footer class="footer"><div class="container"><div class="footer-grid">
+        <div>
+            <h3 style="display:flex;align-items:center;gap:0.5rem;"><i class="fas fa-heartbeat"></i> Uniscans &amp; Labs</h3>
+            <p class="footer-about-text">Accurate, accessible, affordable diagnostics for every family.</p>
+        </div>
+        <div>
+            <h3>Quick Links</h3>
+            <ul class="footer-links">
+                <li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+                <li><a href="packages.html"><i class="fas fa-chevron-right"></i> Health Packages</a></li>
+                <li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+                <li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Packages</h3>
+            <ul class="footer-links">
+                <li><a href="appointment.html?plan=silver"><i class="fas fa-chevron-right"></i> Silver ₹999</a></li>
+                <li><a href="appointment.html?plan=gold"><i class="fas fa-chevron-right"></i> Gold ₹1299</a></li>
+                <li><a href="appointment.html?plan=platinum"><i class="fas fa-chevron-right"></i> Platinum ₹2299</a></li>
+                <li><a href="appointment.html?plan=diamond"><i class="fas fa-chevron-right"></i> Diamond ₹2999</a></li>
+            </ul>
+        </div>
+        <div>
+            <h3>Contact</h3>
+            <ul class="footer-links">
+                <li><a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone"></i> +91 XXXXX-XXXXX</a></li>
+                <li><a href="mailto:info@[DOMAIN]"><i class="fas fa-envelope"></i> info@[DOMAIN]</a></li>
+                <li><i class="fas fa-clock" style="color:var(--teal);"></i> Mon–Sun: 7 AM – 9 PM</li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom"><div class="footer-bottom-inner">
+        <p>&copy; 2026 Uniscans &amp; Labs. All Rights Reserved. | <span style="font-size:0.85rem;">Designed by <a href="#" style="color:var(--teal);font-weight:600;">Upright Digital Solutions</a></span></p>
+    </div></div>
+    </div></footer>
+
     <a href="https://wa.me/91XXXXXXXXXX" class="whatsapp-float" aria-label="Chat on WhatsApp" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
     <button class="back-to-top" id="backToTop" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></button>
     <script src="script.js"></script>

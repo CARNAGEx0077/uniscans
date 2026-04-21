@@ -2865,6 +2865,33 @@ textarea.form-control {
   width: 100%;
 }
 
+/* Tier Specific Styles */
+.card-silver {
+  border-top: 6px solid var(--purple);
+}
+.card-silver .plan-name { color: var(--purple); }
+.card-silver:hover { box-shadow: 0 12px 24px rgba(107, 63, 160, 0.15); border-color: var(--purple); }
+
+.card-gold {
+  border-top: 6px solid #d4af37;
+}
+.card-gold .plan-name { color: #d4af37; }
+.card-gold.popular { border-color: #d4af37; }
+.card-gold.popular .popular-badge { background: #d4af37; color: white; }
+.card-gold.popular:hover { border-color: #d4af37; box-shadow: 0 15px 30px rgba(212, 175, 55, 0.2); }
+
+.card-platinum {
+  border-top: 6px solid #e91e63;
+}
+.card-platinum .plan-name { color: #e91e63; }
+.card-platinum:hover { box-shadow: 0 12px 24px rgba(233, 30, 99, 0.15); border-color: #e91e63; }
+
+.card-diamond {
+  border-top: 6px solid var(--teal);
+}
+.card-diamond .plan-name { color: var(--teal); }
+.card-diamond:hover { box-shadow: var(--shadow-lg); border-color: var(--teal); }
+
 /* Comparison Table */
 .table-responsive {
   overflow-x: auto;
@@ -3156,6 +3183,37 @@ textarea.form-control {
 .portal-login-tab.active {
   color: var(--teal);
   border-bottom-color: var(--teal);
+}
+
+/* ========================================
+   FLOATING BOOKING BUTTON
+   ======================================== */
+.floating-booking-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 110px; /* offset from whatsapp float */
+  background-color: var(--teal);
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(44, 191, 181, 0.4);
+  z-index: 100;
+  transition: var(--transition);
+}
+
+.floating-booking-btn:hover {
+  background-color: var(--teal-dark);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(44, 191, 181, 0.6);
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .floating-booking-btn {
+    bottom: 100px;
+    right: 20px;
+  }
 }
 
 /* ========================================
